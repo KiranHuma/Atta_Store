@@ -22,94 +22,92 @@ Partial Class AddInventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.dataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.dateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.comboBox2 = New System.Windows.Forms.ComboBox()
+        Me.get_inventory = New System.Windows.Forms.DataGridView()
+        Me.in_date = New System.Windows.Forms.DateTimePicker()
         Me.label6 = New System.Windows.Forms.Label()
-        Me.label5 = New System.Windows.Forms.Label()
+        Me.quantity_txt = New System.Windows.Forms.Label()
         Me.label4 = New System.Windows.Forms.Label()
         Me.label3 = New System.Windows.Forms.Label()
-        Me.comboBox1 = New System.Windows.Forms.ComboBox()
+        Me.pro_name = New System.Windows.Forms.ComboBox()
         Me.label2 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
-        Me.textBox3 = New System.Windows.Forms.TextBox()
-        Me.textBox1 = New System.Windows.Forms.TextBox()
-        CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.product_price = New System.Windows.Forms.TextBox()
+        Me.barcode_txt = New System.Windows.Forms.TextBox()
+        Me.welcomemsg = New System.Windows.Forms.Label()
+        Me.In_Id = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Add_btn = New System.Windows.Forms.Button()
+        Me.instock_txt = New System.Windows.Forms.Label()
+        Me.added_by_txt = New System.Windows.Forms.TextBox()
+        CType(Me.get_inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'dataGridView1
+        'get_inventory
         '
-        Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridView1.Location = New System.Drawing.Point(30, 309)
-        Me.dataGridView1.Name = "dataGridView1"
-        Me.dataGridView1.RowHeadersWidth = 51
-        Me.dataGridView1.RowTemplate.Height = 24
-        Me.dataGridView1.Size = New System.Drawing.Size(801, 198)
-        Me.dataGridView1.TabIndex = 25
+        Me.get_inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.get_inventory.Location = New System.Drawing.Point(30, 309)
+        Me.get_inventory.Name = "get_inventory"
+        Me.get_inventory.RowHeadersWidth = 51
+        Me.get_inventory.RowTemplate.Height = 24
+        Me.get_inventory.Size = New System.Drawing.Size(801, 198)
+        Me.get_inventory.TabIndex = 25
         '
-        'dateTimePicker1
+        'in_date
         '
-        Me.dateTimePicker1.Location = New System.Drawing.Point(175, 228)
-        Me.dateTimePicker1.Name = "dateTimePicker1"
-        Me.dateTimePicker1.Size = New System.Drawing.Size(299, 22)
-        Me.dateTimePicker1.TabIndex = 24
-        '
-        'comboBox2
-        '
-        Me.comboBox2.FormattingEnabled = True
-        Me.comboBox2.Location = New System.Drawing.Point(175, 184)
-        Me.comboBox2.Name = "comboBox2"
-        Me.comboBox2.Size = New System.Drawing.Size(299, 24)
-        Me.comboBox2.TabIndex = 23
+        Me.in_date.Enabled = False
+        Me.in_date.Location = New System.Drawing.Point(176, 244)
+        Me.in_date.Name = "in_date"
+        Me.in_date.Size = New System.Drawing.Size(299, 22)
+        Me.in_date.TabIndex = 24
         '
         'label6
         '
         Me.label6.AutoSize = True
-        Me.label6.Location = New System.Drawing.Point(78, 184)
+        Me.label6.Location = New System.Drawing.Point(79, 200)
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(68, 17)
         Me.label6.TabIndex = 22
         Me.label6.Text = "Added by"
         '
-        'label5
+        'quantity_txt
         '
-        Me.label5.AutoSize = True
-        Me.label5.Location = New System.Drawing.Point(459, 277)
-        Me.label5.Name = "label5"
-        Me.label5.Size = New System.Drawing.Size(16, 17)
-        Me.label5.TabIndex = 21
-        Me.label5.Text = "0"
+        Me.quantity_txt.AutoSize = True
+        Me.quantity_txt.Location = New System.Drawing.Point(446, 279)
+        Me.quantity_txt.Name = "quantity_txt"
+        Me.quantity_txt.Size = New System.Drawing.Size(16, 17)
+        Me.quantity_txt.TabIndex = 21
+        Me.quantity_txt.Text = "1"
         '
         'label4
         '
         Me.label4.AutoSize = True
-        Me.label4.Location = New System.Drawing.Point(361, 277)
+        Me.label4.Location = New System.Drawing.Point(788, 26)
         Me.label4.Name = "label4"
-        Me.label4.Size = New System.Drawing.Size(61, 17)
+        Me.label4.Size = New System.Drawing.Size(58, 17)
         Me.label4.TabIndex = 20
-        Me.label4.Text = "Quantity"
+        Me.label4.Text = "In Stock"
         '
         'label3
         '
         Me.label3.AutoSize = True
-        Me.label3.Location = New System.Drawing.Point(89, 154)
+        Me.label3.Location = New System.Drawing.Point(90, 170)
         Me.label3.Name = "label3"
         Me.label3.Size = New System.Drawing.Size(40, 17)
         Me.label3.TabIndex = 19
         Me.label3.Text = "Price"
         '
-        'comboBox1
+        'pro_name
         '
-        Me.comboBox1.FormattingEnabled = True
-        Me.comboBox1.Location = New System.Drawing.Point(175, 103)
-        Me.comboBox1.Name = "comboBox1"
-        Me.comboBox1.Size = New System.Drawing.Size(299, 24)
-        Me.comboBox1.TabIndex = 18
+        Me.pro_name.FormattingEnabled = True
+        Me.pro_name.Location = New System.Drawing.Point(176, 119)
+        Me.pro_name.Name = "pro_name"
+        Me.pro_name.Size = New System.Drawing.Size(299, 24)
+        Me.pro_name.TabIndex = 18
         '
         'label2
         '
         Me.label2.AutoSize = True
-        Me.label2.Location = New System.Drawing.Point(84, 110)
+        Me.label2.Location = New System.Drawing.Point(85, 126)
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(45, 17)
         Me.label2.TabIndex = 17
@@ -118,61 +116,123 @@ Partial Class AddInventory
         'label1
         '
         Me.label1.AutoSize = True
-        Me.label1.Location = New System.Drawing.Point(84, 66)
+        Me.label1.Location = New System.Drawing.Point(85, 82)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(61, 17)
         Me.label1.TabIndex = 16
         Me.label1.Text = "Barcode"
         '
-        'textBox3
+        'product_price
         '
-        Me.textBox3.Location = New System.Drawing.Point(175, 149)
-        Me.textBox3.Name = "textBox3"
-        Me.textBox3.Size = New System.Drawing.Size(299, 22)
-        Me.textBox3.TabIndex = 15
+        Me.product_price.Location = New System.Drawing.Point(176, 165)
+        Me.product_price.Name = "product_price"
+        Me.product_price.Size = New System.Drawing.Size(299, 22)
+        Me.product_price.TabIndex = 15
         '
-        'textBox1
+        'barcode_txt
         '
-        Me.textBox1.Location = New System.Drawing.Point(175, 61)
-        Me.textBox1.Name = "textBox1"
-        Me.textBox1.Size = New System.Drawing.Size(299, 22)
-        Me.textBox1.TabIndex = 14
+        Me.barcode_txt.Location = New System.Drawing.Point(176, 77)
+        Me.barcode_txt.Name = "barcode_txt"
+        Me.barcode_txt.Size = New System.Drawing.Size(299, 22)
+        Me.barcode_txt.TabIndex = 14
+        '
+        'welcomemsg
+        '
+        Me.welcomemsg.AutoSize = True
+        Me.welcomemsg.Location = New System.Drawing.Point(282, 26)
+        Me.welcomemsg.Name = "welcomemsg"
+        Me.welcomemsg.Size = New System.Drawing.Size(66, 17)
+        Me.welcomemsg.TabIndex = 26
+        Me.welcomemsg.Text = "Welcome"
+        '
+        'In_Id
+        '
+        Me.In_Id.AutoSize = True
+        Me.In_Id.Location = New System.Drawing.Point(459, 57)
+        Me.In_Id.Name = "In_Id"
+        Me.In_Id.Size = New System.Drawing.Size(16, 17)
+        Me.In_Id.TabIndex = 27
+        Me.In_Id.Text = "0"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(78, 249)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(38, 17)
+        Me.Label5.TabIndex = 28
+        Me.Label5.Text = "Date"
+        '
+        'Add_btn
+        '
+        Me.Add_btn.Location = New System.Drawing.Point(536, 76)
+        Me.Add_btn.Name = "Add_btn"
+        Me.Add_btn.Size = New System.Drawing.Size(83, 23)
+        Me.Add_btn.TabIndex = 29
+        Me.Add_btn.Text = "Add"
+        Me.Add_btn.UseVisualStyleBackColor = True
+        '
+        'instock_txt
+        '
+        Me.instock_txt.AutoSize = True
+        Me.instock_txt.Location = New System.Drawing.Point(802, 57)
+        Me.instock_txt.Name = "instock_txt"
+        Me.instock_txt.Size = New System.Drawing.Size(16, 17)
+        Me.instock_txt.TabIndex = 30
+        Me.instock_txt.Text = "1"
+        '
+        'added_by_txt
+        '
+        Me.added_by_txt.Location = New System.Drawing.Point(176, 200)
+        Me.added_by_txt.Name = "added_by_txt"
+        Me.added_by_txt.Size = New System.Drawing.Size(299, 22)
+        Me.added_by_txt.TabIndex = 31
         '
         'AddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(858, 519)
-        Me.Controls.Add(Me.dataGridView1)
-        Me.Controls.Add(Me.dateTimePicker1)
-        Me.Controls.Add(Me.comboBox2)
+        Me.Controls.Add(Me.added_by_txt)
+        Me.Controls.Add(Me.instock_txt)
+        Me.Controls.Add(Me.Add_btn)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.In_Id)
+        Me.Controls.Add(Me.welcomemsg)
+        Me.Controls.Add(Me.get_inventory)
+        Me.Controls.Add(Me.in_date)
         Me.Controls.Add(Me.label6)
-        Me.Controls.Add(Me.label5)
+        Me.Controls.Add(Me.quantity_txt)
         Me.Controls.Add(Me.label4)
         Me.Controls.Add(Me.label3)
-        Me.Controls.Add(Me.comboBox1)
+        Me.Controls.Add(Me.pro_name)
         Me.Controls.Add(Me.label2)
         Me.Controls.Add(Me.label1)
-        Me.Controls.Add(Me.textBox3)
-        Me.Controls.Add(Me.textBox1)
+        Me.Controls.Add(Me.product_price)
+        Me.Controls.Add(Me.barcode_txt)
         Me.Name = "AddInventory"
         Me.Text = "Form1"
-        CType(Me.dataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.get_inventory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Private WithEvents dataGridView1 As DataGridView
-    Private WithEvents dateTimePicker1 As DateTimePicker
-    Private WithEvents comboBox2 As ComboBox
+    Private WithEvents get_inventory As DataGridView
+    Private WithEvents in_date As DateTimePicker
     Private WithEvents label6 As Label
-    Private WithEvents label5 As Label
+    Private WithEvents quantity_txt As Label
     Private WithEvents label4 As Label
     Private WithEvents label3 As Label
-    Private WithEvents comboBox1 As ComboBox
+    Private WithEvents pro_name As ComboBox
     Private WithEvents label2 As Label
     Private WithEvents label1 As Label
-    Private WithEvents textBox3 As TextBox
-    Private WithEvents textBox1 As TextBox
+    Private WithEvents product_price As TextBox
+    Private WithEvents barcode_txt As TextBox
+    Private WithEvents welcomemsg As Label
+    Private WithEvents In_Id As Label
+    Private WithEvents Label5 As Label
+    Friend WithEvents Add_btn As Button
+    Private WithEvents instock_txt As Label
+    Public WithEvents added_by_txt As TextBox
 End Class
