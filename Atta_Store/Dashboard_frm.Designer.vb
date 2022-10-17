@@ -24,6 +24,7 @@ Partial Class Dashboard_frm
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -44,11 +45,21 @@ Partial Class Dashboard_frm
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Add Inventory"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(31, 149)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(26, 17)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Bill"
+        '
         'Dashboard_frm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(955, 680)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Dashboard_frm"
@@ -60,4 +71,5 @@ Partial Class Dashboard_frm
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

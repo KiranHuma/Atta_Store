@@ -83,7 +83,7 @@ Partial Class addnewcategory_frm
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(349, 201)
+        Me.Button1.Location = New System.Drawing.Point(349, 151)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 30)
         Me.Button1.TabIndex = 6

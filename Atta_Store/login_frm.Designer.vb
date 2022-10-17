@@ -194,6 +194,7 @@ Partial Class login_frm
         Me.Controls.Add(Me.label6)
         Me.Controls.Add(Me.loginBtn)
         Me.Name = "login_frm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "login_frm"
         Me.panel3.ResumeLayout(False)
         Me.panel3.PerformLayout()

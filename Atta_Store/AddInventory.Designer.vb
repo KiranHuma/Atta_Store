@@ -183,7 +183,7 @@ Partial Class AddInventory
         '
         'added_by_txt
         '
-        Me.added_by_txt.Location = New System.Drawing.Point(176, 200)
+        Me.added_by_txt.Location = New System.Drawing.Point(176, 216)
         Me.added_by_txt.Name = "added_by_txt"
         Me.added_by_txt.Size = New System.Drawing.Size(299, 22)
         Me.added_by_txt.TabIndex = 31

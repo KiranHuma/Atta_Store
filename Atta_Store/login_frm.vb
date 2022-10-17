@@ -38,7 +38,8 @@ Public Class login_frm
                 'Me.Close()
 
                 AddInventory.added_by_txt.Text = Me.txtUsername.Text
-                AddInventory.Show()
+                bill_frm.sell_by.Text = Me.txtUsername.Text
+                Dashboard_frm.Show()
                 ' Me.Close()
             Else
                 MessageBox.Show("Invalid username or password")

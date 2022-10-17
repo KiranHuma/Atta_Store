@@ -86,6 +86,12 @@
     <Compile Include="addnewcategory_frm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="bill_frm.Designer.vb">
+      <DependentUpon>bill_frm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bill_frm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dashboard_frm.Designer.vb">
       <DependentUpon>Dashboard_frm.vb</DependentUpon>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addnewcategory_frm.resx">
       <DependentUpon>addnewcategory_frm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bill_frm.resx">
+      <DependentUpon>bill_frm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard_frm.resx">
       <DependentUpon>Dashboard_frm.vb</DependentUpon>

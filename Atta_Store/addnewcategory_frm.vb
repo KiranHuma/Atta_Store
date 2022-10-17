@@ -69,7 +69,7 @@ Public Class addnewcategory_frm
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         insert()
         txtboxid()
-        category_name.Text = ""
+        category_name.Text=""
         category_pricetxt.Text = ""
     End Sub
 
