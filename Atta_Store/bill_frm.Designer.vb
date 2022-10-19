@@ -22,6 +22,10 @@ Partial Class bill_frm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("list1")
+        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("list2")
+        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("list3")
+        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("")
         Me.sell_barcode = New System.Windows.Forms.TextBox()
         Me.product_name = New System.Windows.Forms.TextBox()
         Me.prodcut_price = New System.Windows.Forms.TextBox()
@@ -33,14 +37,16 @@ Partial Class bill_frm
         Me.Label5 = New System.Windows.Forms.Label()
         Me.sell_date = New System.Windows.Forms.DateTimePicker()
         Me.sell_qty = New System.Windows.Forms.Label()
-        Me.sell_list = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.process_lbl = New System.Windows.Forms.Label()
         Me.sell_id = New System.Windows.Forms.Label()
         Me.welcomemsg = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        CType(Me.sell_list, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -133,16 +139,6 @@ Partial Class bill_frm
         Me.sell_qty.TabIndex = 10
         Me.sell_qty.Text = "1"
         '
-        'sell_list
-        '
-        Me.sell_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.sell_list.Location = New System.Drawing.Point(447, 32)
-        Me.sell_list.Name = "sell_list"
-        Me.sell_list.RowHeadersWidth = 51
-        Me.sell_list.RowTemplate.Height = 24
-        Me.sell_list.Size = New System.Drawing.Size(477, 313)
-        Me.sell_list.TabIndex = 11
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(817, 364)
@@ -203,18 +199,30 @@ Partial Class bill_frm
         Me.RadioButton1.Text = "RadioButton1"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4})
+        Me.ListView1.Location = New System.Drawing.Point(461, 31)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(345, 253)
+        Me.ListView1.TabIndex = 18
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Tile
+        '
         'bill_frm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(936, 508)
+        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.welcomemsg)
         Me.Controls.Add(Me.sell_id)
         Me.Controls.Add(Me.process_lbl)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.sell_list)
         Me.Controls.Add(Me.sell_qty)
         Me.Controls.Add(Me.sell_date)
         Me.Controls.Add(Me.Label5)
@@ -222,7 +230,6 @@ Partial Class bill_frm
         Me.Controls.Add(Me.sell_by)
         Me.Name = "bill_frm"
         Me.Text = "bill_frm"
-        CType(Me.sell_list, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
@@ -241,11 +248,14 @@ Partial Class bill_frm
     Friend WithEvents Label5 As Label
     Friend WithEvents sell_date As DateTimePicker
     Friend WithEvents sell_qty As Label
-    Friend WithEvents sell_list As DataGridView
     Friend WithEvents Button1 As Button
     Friend WithEvents process_lbl As Label
     Friend WithEvents sell_id As Label
     Friend WithEvents welcomemsg As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
 End Class

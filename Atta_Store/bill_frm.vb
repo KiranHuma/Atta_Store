@@ -113,7 +113,7 @@ Public Class bill_frm
         Next
 
     End Sub
-
+   
     Private Sub insert_repeat()
         If RadioButton1.Checked = False Then
             'process_lbl.Text = "process"
