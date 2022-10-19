@@ -118,6 +118,11 @@ Public Class AddInventory
         product_price.Text = ""
         added_by_txt.Text = ""
     End Sub
+    Private Sub add_stock()
+        Dim quatityadd As Double
+        quatityadd = instock_txt.Text + 1
+        instock_txt.Text = quatityadd
+    End Sub
     Private Sub instock_inventory()
 
         Using connection As New SqlConnection(cs)
@@ -145,14 +150,17 @@ Public Class AddInventory
     Private Sub Add_btn_Click(sender As Object, e As EventArgs) Handles Add_btn.Click
 
         insert()
+        add_stock()
+        instock_edit()
         barcode_txt.Text = ""
         pro_name.Text = ""
         product_price.Text = ""
-        ' added_by_txt.Text = ""
-        txtboxid()
-        getdata()
-        ' FillCombo_add_by()
-        FillCombo_product_name()
+
+        ' txtboxid()
+        '  getdata()
+
+        '  FillCombo_product_name()
+
     End Sub
     Private Sub get_price()
         Dim con As New SqlConnection(cs)
@@ -175,9 +183,32 @@ Public Class AddInventory
             Me.Dispose()
         End Try
     End Sub
+    'edit function
+    Private Sub instock_edit()
+        Try
+
+
+
+            con.ConnectionString = cs
+            cmd.Connection = con
+            con.Open()
+            cmd.CommandText = "UPDATE category_tbl SET in_stock_qty= '" & instock_txt.Text & "' where category_name='" & pro_name.Text & "'"
+            cmd.ExecuteNonQuery()
+
+            welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
+            welcomemsg.Text = "'" & In_Id.Text & "' details update successfully!"
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show("Data Not Updated" & ex.Message)
+            welcomemsg.ForeColor = System.Drawing.Color.Red
+            Me.Dispose()
+        End Try
+    End Sub
     Private Sub pro_name_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pro_name.SelectedIndexChanged
 
         get_price()
+
         instock_inventory()
+
     End Sub
 End Class

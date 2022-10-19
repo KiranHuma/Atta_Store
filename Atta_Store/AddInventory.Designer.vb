@@ -157,7 +157,7 @@ Partial Class AddInventory
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(78, 249)
+        Me.Label5.Location = New System.Drawing.Point(90, 244)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(38, 17)
         Me.Label5.TabIndex = 28
@@ -183,7 +183,7 @@ Partial Class AddInventory
         '
         'added_by_txt
         '
-        Me.added_by_txt.Location = New System.Drawing.Point(176, 216)
+        Me.added_by_txt.Location = New System.Drawing.Point(176, 200)
         Me.added_by_txt.Name = "added_by_txt"
         Me.added_by_txt.Size = New System.Drawing.Size(299, 22)
         Me.added_by_txt.TabIndex = 31

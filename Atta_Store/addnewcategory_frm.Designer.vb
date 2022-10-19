@@ -29,6 +29,11 @@ Partial Class addnewcategory_frm
         Me.catoger_id = New System.Windows.Forms.Label()
         Me.welcomemsg = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cat_original_price = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.qty_text = New System.Windows.Forms.Label()
+        Me.exist_record_lbl = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'category_name
@@ -40,7 +45,7 @@ Partial Class addnewcategory_frm
         '
         'category_pricetxt
         '
-        Me.category_pricetxt.Location = New System.Drawing.Point(201, 109)
+        Me.category_pricetxt.Location = New System.Drawing.Point(201, 146)
         Me.category_pricetxt.Name = "category_pricetxt"
         Me.category_pricetxt.Size = New System.Drawing.Size(223, 22)
         Me.category_pricetxt.TabIndex = 1
@@ -57,7 +62,7 @@ Partial Class addnewcategory_frm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(85, 114)
+        Me.Label2.Location = New System.Drawing.Point(85, 151)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(40, 17)
         Me.Label2.TabIndex = 3
@@ -83,18 +88,66 @@ Partial Class addnewcategory_frm
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(349, 151)
+        Me.Button1.Location = New System.Drawing.Point(349, 194)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 30)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Add"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(85, 106)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 17)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Original Price"
+        '
+        'cat_original_price
+        '
+        Me.cat_original_price.Location = New System.Drawing.Point(201, 101)
+        Me.cat_original_price.Name = "cat_original_price"
+        Me.cat_original_price.Size = New System.Drawing.Size(223, 22)
+        Me.cat_original_price.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(517, 22)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(61, 17)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "Quantity"
+        '
+        'qty_text
+        '
+        Me.qty_text.AutoSize = True
+        Me.qty_text.Location = New System.Drawing.Point(536, 50)
+        Me.qty_text.Name = "qty_text"
+        Me.qty_text.Size = New System.Drawing.Size(16, 17)
+        Me.qty_text.TabIndex = 10
+        Me.qty_text.Text = "0"
+        '
+        'exist_record_lbl
+        '
+        Me.exist_record_lbl.AutoSize = True
+        Me.exist_record_lbl.Location = New System.Drawing.Point(76, 269)
+        Me.exist_record_lbl.Name = "exist_record_lbl"
+        Me.exist_record_lbl.Size = New System.Drawing.Size(51, 17)
+        Me.exist_record_lbl.TabIndex = 11
+        Me.exist_record_lbl.Text = "Label5"
+        '
         'addnewcategory_frm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(599, 251)
+        Me.ClientSize = New System.Drawing.Size(599, 325)
+        Me.Controls.Add(Me.exist_record_lbl)
+        Me.Controls.Add(Me.qty_text)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.cat_original_price)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.welcomemsg)
         Me.Controls.Add(Me.catoger_id)
@@ -116,4 +169,9 @@ Partial Class addnewcategory_frm
     Friend WithEvents catoger_id As Label
     Friend WithEvents welcomemsg As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cat_original_price As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents qty_text As Label
+    Friend WithEvents exist_record_lbl As Label
 End Class

@@ -31,7 +31,7 @@ Public Class addnewcategory_frm
             con.ConnectionString = cs
             cmd.Connection = con
             con.Open()
-            cmd.CommandText = "insert into category_tbl(catgoery_id,category_name,catogery_price)values('" & catoger_id.Text & "','" & category_name.Text & "','" & category_pricetxt.Text & "')"
+            cmd.CommandText = "insert into category_tbl(catgoery_id,category_name,cat_original_price,catogery_price,in_stock_qty)values('" & catoger_id.Text & "','" & category_name.Text & "','" & cat_original_price.Text & "','" & category_pricetxt.Text & "','" & qty_text.Text & "')"
             cmd.ExecuteNonQuery()
 
             welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
@@ -75,5 +75,34 @@ Public Class addnewcategory_frm
 
     Private Sub catoger_id_Click(sender As Object, e As EventArgs) Handles catoger_id.Click
 
+    End Sub
+    Public Sub namecheck()
+        Dim cmd As New SqlCommand()
+
+        Dim str As String
+        Dim com As SqlCommand
+
+
+        Dim con As New SqlConnection(cs)
+            con.Open()
+        str = "select count(*)from category_tbl where category_name='" & category_name.Text & "'"
+        com = New SqlCommand(Str, con)
+            Dim count As Integer = Convert.ToInt32(com.ExecuteScalar())
+            con.Close()
+            If count > 0 Then
+            exist_record_lbl.Visible = True
+            exist_record_lbl.Text = "Sorry! you can't take this username"
+            exist_record_lbl.ForeColor = Color.Red
+            'label7.Text = "";
+        Else
+            exist_record_lbl.Text = ""
+
+        End If
+
+
+
+    End Sub
+    Private Sub category_name_TextChanged(sender As Object, e As EventArgs) Handles category_name.TextChanged
+        namecheck()
     End Sub
 End Class
