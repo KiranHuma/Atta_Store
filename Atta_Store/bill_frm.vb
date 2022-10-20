@@ -47,24 +47,84 @@ Public Class bill_frm
 
         Catch ex As Exception
 
-            MessageBox.Show(ex.Message)
-            Me.Dispose()
+            '  MessageBox.Show("Error: Product not retrived properly" & ex.Message)
+            ' Me.Dispose()
+            welcomemsg.ForeColor = System.Drawing.Color.Red
+            welcomemsg.Text = "Out of Stock"
         End Try
     End Sub
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
     End Sub
+    Private Sub outstock_edit()
+        Try
 
+
+
+            con.ConnectionString = cs
+            cmd.Connection = con
+            con.Open()
+            cmd.CommandText = "UPDATE category_tbl SET in_stock_qty= '" & sell_qty.Text & "' where category_name='" & product_name.Text & "'"
+            cmd.ExecuteNonQuery()
+
+            welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
+            welcomemsg.Text = "'" & product_name.Text & "' details update successfully!"
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show("Data Not Updated" & ex.Message)
+            welcomemsg.ForeColor = System.Drawing.Color.Red
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub out_stock()
+
+
+        Using connection As New SqlConnection(cs)
+            Try
+
+                Dim command As New SqlCommand("SELECT (in_stock_qty -1) AS outstock FROM category_tbl where category_name IS NOT NULL AND category_name='" & product_name.Text & "'", connection)
+                connection.Open()
+                cmd.Parameters.Clear()
+                Dim read As SqlDataReader = command.ExecuteReader()
+
+                Do While read.Read()
+                    sell_qty.Text = (read("outstock").ToString())
+
+                Loop
+                read.Close()
+                If sell_qty.Text < 0 Then
+                    MsgBox("out of stock")
+                    clear_previous_entity()
+                Else
+                    list_products()
+                End If
+            Catch ex As Exception
+
+                MessageBox.Show("Error: data entry" & ex.Message)
+                'Me.Dispose()
+            End Try
+        End Using
+    End Sub
+    Private Sub Total_bill()
+
+
+        Dim quatityprice As Double
+        Dim quatityprice2 As Double
+        Dim num3 As Double
+        quatityprice = Convert.ToDouble(prodcut_price.Text)
+        quatityprice2 = Convert.ToDouble(totalPrice.Text)
+        num3 = quatityprice + quatityprice2
+        totalPrice.Text = CStr(num3)
+    End Sub
     Private Sub sell_barcode_TextChanged(sender As Object, e As EventArgs) Handles sell_barcode.TextChanged
         get_price()
-        RadioButton1.Checked = True
     End Sub
     Private Sub insert()
         Try
             con.ConnectionString = cs
             cmd.Connection = con
             con.Open()
-            cmd.CommandText = "insert into sell_tbl(sell_id,barcode,product_name,price,sell_by,date,quantity)values('" & sell_id.Text & "','" & sell_barcode.Text & "','" & product_name.Text & "','" & prodcut_price.Text & "','" & sell_by.Text & "','" & sell_date.Value & "','" & sell_qty.Text & "')"
+            cmd.CommandText = "insert into sell_tbl(sell_id,product_list,price,sell_by,date,quantity)values('" & sell_id.Text & "','" & list_richtxt.Text & "','" & totalPrice.Text & "','" & sell_by.Text & "','" & sell_date.Value & "','" & sell_qty.Text & "')"
             cmd.ExecuteNonQuery()
 
             welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
@@ -92,74 +152,45 @@ Public Class bill_frm
             End If
             con.Close()
         Catch ex As Exception
-            MsgBox("Failed:Autoincrement of Inventory Entry" & ex.Message)
+            MsgBox("Failed:Autoincrement of Entry" & ex.Message)
             Me.Dispose()
         End Try
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        send_data()
+        insert()
     End Sub
+    Private Sub list_products()
 
+        list_richtxt.Text &= "Barcode" & ":" & sell_barcode.Text & "," & "Product " & ":" & product_name.Text & "," & "Price" & ":" + prodcut_price.Text & vbNewLine
+    End Sub
     Private Sub bill_frm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtboxid()
+        sell_barcode.Focus()
     End Sub
 
-    Private Sub sell_by_TextChanged(sender As Object, e As EventArgs) Handles sell_by.TextChanged
-
-    End Sub
     Private Sub clear_previous_entity()
         For Each txt In Panel1.Controls.OfType(Of TextBox)()
             txt.Text = ""
         Next
-
+        welcomemsg.Text = ""
     End Sub
-   
-    Private Sub insert_repeat()
-        If RadioButton1.Checked = False Then
-            'process_lbl.Text = "process"
 
 
+    Private Sub prodcut_price_TextChanged(sender As Object, e As EventArgs) Handles prodcut_price.TextChanged
+        If String.IsNullOrWhiteSpace(sell_barcode.Text) Then
+            welcomemsg.ForeColor = System.Drawing.Color.Red
+            welcomemsg.Text = "out of stock"
+            clear_previous_entity()
         Else
-            ' process_lbl.Text = "sell"
-            txtboxid()
-            insert()
 
-            'clear_previous_entity()
-            txtboxid()
+            out_stock()
+            outstock_edit()
+            Total_bill()
+            clear_previous_entity()
         End If
     End Sub
-    Private Sub send_data()
 
-
-
-        Dim dt As New DataTable
-        Dim dr As DataRow
-
-
-        dt.Columns.Add("sell_id")
-        dt.Columns.Add("barcode")
-        dt.Columns.Add("product_name")
-        dt.Columns.Add("price")
-        dt.Columns.Add("sell_by")
-        dt.Columns.Add("date")
-        dt.Columns.Add("quantity")
-
-
-
-        dr = dt.NewRow
-        dr("sell_id") = sell_id.Text
-        dr("barcode") = sell_barcode.Text
-        dr("product_name") = product_name.Text
-        dr("price") = prodcut_price.Text
-
-        dr("sell_by") = sell_by.Text
-        dr("date") = sell_date.Text
-        dr("quantity") = sell_qty.Text
-
-        dt.Rows.Add(dr)
-        sell_list.DataSource = dt
-    End Sub
-    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+    Private Sub product_name_TextChanged(sender As Object, e As EventArgs) Handles product_name.TextChanged
 
     End Sub
 End Class

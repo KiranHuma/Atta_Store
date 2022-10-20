@@ -104,6 +104,12 @@
     <Compile Include="login_frm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="masterFrm.Designer.vb">
+      <DependentUpon>masterFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="masterFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login_frm.resx">
       <DependentUpon>login_frm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterFrm.resx">
+      <DependentUpon>masterFrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -148,7 +148,7 @@ Public Class AddInventory
 
     End Sub
     Private Sub Add_btn_Click(sender As Object, e As EventArgs) Handles Add_btn.Click
-
+        txtboxid()
         insert()
         add_stock()
         instock_edit()
@@ -156,7 +156,7 @@ Public Class AddInventory
         pro_name.Text = ""
         product_price.Text = ""
 
-        ' txtboxid()
+
         '  getdata()
 
         '  FillCombo_product_name()
