@@ -34,6 +34,7 @@ Partial Class addnewcategory_frm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.qty_text = New System.Windows.Forms.Label()
         Me.exist_record_lbl = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'category_name
@@ -138,11 +139,21 @@ Partial Class addnewcategory_frm
         Me.exist_record_lbl.TabIndex = 11
         Me.exist_record_lbl.Text = "Label5"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(489, 269)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 30)
+        Me.Button2.TabIndex = 12
+        Me.Button2.Text = "Back"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'addnewcategory_frm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(599, 325)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.exist_record_lbl)
         Me.Controls.Add(Me.qty_text)
         Me.Controls.Add(Me.Label4)
@@ -174,4 +185,5 @@ Partial Class addnewcategory_frm
     Friend WithEvents Label4 As Label
     Friend WithEvents qty_text As Label
     Friend WithEvents exist_record_lbl As Label
+    Friend WithEvents Button2 As Button
 End Class

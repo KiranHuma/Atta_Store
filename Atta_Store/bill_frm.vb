@@ -53,6 +53,31 @@ Public Class bill_frm
             welcomemsg.Text = "Out of Stock"
         End Try
     End Sub
+    Private Sub get_actual_price()
+        Dim con As New SqlConnection(cs)
+        Try
+
+            Dim command As New SqlCommand("select * from category_tbl where category_name='" & product_name.Text & "'", con)
+            con.Open()
+            cmd.Parameters.Clear()
+            Dim read As SqlDataReader = command.ExecuteReader()
+
+            Do While read.Read()
+                original_price_txt.Text = (read("cat_original_price").ToString())
+
+
+
+            Loop
+            read.Close()
+
+        Catch ex As Exception
+
+            '  MessageBox.Show("Error: Product not retrived properly" & ex.Message)
+            ' Me.Dispose()
+            welcomemsg.ForeColor = System.Drawing.Color.Red
+            welcomemsg.Text = "Out of Stock"
+        End Try
+    End Sub
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
     End Sub
@@ -112,19 +137,53 @@ Public Class bill_frm
         Dim quatityprice2 As Double
         Dim num3 As Double
         quatityprice = Convert.ToDouble(prodcut_price.Text)
-        quatityprice2 = Convert.ToDouble(totalPrice.Text)
+        quatityprice2 = Convert.ToDouble(total_sale_Price.Text)
         num3 = quatityprice + quatityprice2
-        totalPrice.Text = CStr(num3)
+        total_sale_Price.Text = CStr(num3)
+    End Sub
+    Private Sub Total_profit_bill()
+
+
+        Dim profitprice As Double
+        Dim profitprice2 As Double
+        Dim num5 As Double
+        profitprice = Convert.ToDouble(totalactual_price_txt.Text)
+        profitprice2 = Convert.ToDouble(total_sale_Price.Text)
+        num5 = profitprice - profitprice2
+        profit_txt.Text = CStr(num5)
+    End Sub
+    Private Sub Total_profit()
+
+
+        Dim totalprofitprice As Double
+        Dim totalprofitprice2 As Double
+        Dim num5 As Double
+        totalprofitprice = Convert.ToDouble(profit_txt.Text)
+        totalprofitprice2 = Convert.ToDouble(totprofit.Text)
+        num5 = totalprofitprice + totalprofitprice2
+        totprofit.Text = CStr(num5)
+    End Sub
+    Private Sub Total_actual_bill()
+
+
+        Dim actualprice As Double
+        Dim actualprice2 As Double
+        Dim num4 As Double
+        actualprice = Convert.ToDouble(original_price_txt.Text)
+        actualprice2 = Convert.ToDouble(totalactual_price_txt.Text)
+        num4 = actualprice + actualprice2
+        totalactual_price_txt.Text = CStr(num4)
     End Sub
     Private Sub sell_barcode_TextChanged(sender As Object, e As EventArgs) Handles sell_barcode.TextChanged
         get_price()
+        ' get_actual_price()
     End Sub
     Private Sub insert()
         Try
             con.ConnectionString = cs
             cmd.Connection = con
             con.Open()
-            cmd.CommandText = "insert into sell_tbl(sell_id,product_list,price,sell_by,date,quantity)values('" & sell_id.Text & "','" & list_richtxt.Text & "','" & totalPrice.Text & "','" & sell_by.Text & "','" & sell_date.Value & "','" & sell_qty.Text & "')"
+            cmd.CommandText = "insert into sell_tbl(sell_id,product_list,price,profit_price,sell_by,date,quantity)values('" & sell_id.Text & "','" & list_richtxt.Text & "','" & total_sale_Price.Text & "','" & profit_txt.Text & "','" & sell_by.Text & "','" & sell_date.Value & "','" & sell_qty.Text & "')"
             cmd.ExecuteNonQuery()
 
             welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
@@ -158,6 +217,11 @@ Public Class bill_frm
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         insert()
+        original_price_txt.Text = "0"
+        totalactual_price_txt.Text = "0"
+        total_sale_Price.Text = "0"
+        profit_txt.Text = "0"
+        list_richtxt.Text = ""
     End Sub
     Private Sub list_products()
 
@@ -184,13 +248,21 @@ Public Class bill_frm
         Else
 
             out_stock()
+            get_actual_price()
             outstock_edit()
             Total_bill()
+            Total_actual_bill()
+            Total_profit_bill()
+            Total_profit()
             clear_previous_entity()
         End If
     End Sub
 
     Private Sub product_name_TextChanged(sender As Object, e As EventArgs) Handles product_name.TextChanged
+
+    End Sub
+
+    Private Sub profit_txt_TextChanged(sender As Object, e As EventArgs) Handles profit_txt.TextChanged
 
     End Sub
 End Class

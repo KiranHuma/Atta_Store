@@ -147,6 +147,7 @@ Public Class AddInventory
         End Using
 
     End Sub
+
     Private Sub Add_btn_Click(sender As Object, e As EventArgs) Handles Add_btn.Click
         txtboxid()
         insert()
@@ -210,5 +211,11 @@ Public Class AddInventory
 
         instock_inventory()
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        addnewcategory_frm.Show()
+        Me.Close()
     End Sub
 End Class

@@ -105,4 +105,9 @@ Public Class addnewcategory_frm
     Private Sub category_name_TextChanged(sender As Object, e As EventArgs) Handles category_name.TextChanged
         namecheck()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        AddInventory.Show()
+        Me.Close()
+    End Sub
 End Class

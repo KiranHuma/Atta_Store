@@ -22,6 +22,7 @@ Partial Class AddInventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.get_inventory = New System.Windows.Forms.DataGridView()
         Me.in_date = New System.Windows.Forms.DateTimePicker()
         Me.label6 = New System.Windows.Forms.Label()
@@ -39,6 +40,8 @@ Partial Class AddInventory
         Me.Add_btn = New System.Windows.Forms.Button()
         Me.instock_txt = New System.Windows.Forms.Label()
         Me.added_by_txt = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.get_inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -86,6 +89,7 @@ Partial Class AddInventory
         Me.label4.Size = New System.Drawing.Size(58, 17)
         Me.label4.TabIndex = 20
         Me.label4.Text = "In Stock"
+        Me.label4.Visible = False
         '
         'label3
         '
@@ -98,6 +102,9 @@ Partial Class AddInventory
         '
         'pro_name
         '
+        Me.pro_name.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.pro_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.pro_name.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.pro_name.FormattingEnabled = True
         Me.pro_name.Location = New System.Drawing.Point(176, 119)
         Me.pro_name.Name = "pro_name"
@@ -180,6 +187,7 @@ Partial Class AddInventory
         Me.instock_txt.Size = New System.Drawing.Size(16, 17)
         Me.instock_txt.TabIndex = 30
         Me.instock_txt.Text = "1"
+        Me.instock_txt.Visible = False
         '
         'added_by_txt
         '
@@ -188,11 +196,25 @@ Partial Class AddInventory
         Me.added_by_txt.Size = New System.Drawing.Size(299, 22)
         Me.added_by_txt.TabIndex = 31
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(481, 120)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(59, 23)
+        Me.Button1.TabIndex = 32
+        Me.Button1.Text = "+"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.ToolTipTitle = "Add New Category"
+        '
         'AddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(858, 519)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.added_by_txt)
         Me.Controls.Add(Me.instock_txt)
         Me.Controls.Add(Me.Add_btn)
@@ -235,4 +257,6 @@ Partial Class AddInventory
     Friend WithEvents Add_btn As Button
     Private WithEvents instock_txt As Label
     Public WithEvents added_by_txt As TextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

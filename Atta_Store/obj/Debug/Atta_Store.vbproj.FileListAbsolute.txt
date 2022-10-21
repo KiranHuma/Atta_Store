@@ -14,3 +14,4 @@ D:\Vb projects\Atta_Store\Atta_Store\obj\Debug\Atta_Store.addnewcategory_frm.res
 D:\Vb projects\Atta_Store\Atta_Store\obj\Debug\Atta_Store.Dashboard_frm.resources
 D:\Vb projects\Atta_Store\Atta_Store\obj\Debug\Atta_Store.vbproj.AssemblyReference.cache
 D:\Vb projects\Atta_Store\Atta_Store\obj\Debug\Atta_Store.bill_frm.resources
+D:\Vb projects\Atta_Store\Atta_Store\obj\Debug\Atta_Store.masterFrm.resources
