@@ -1,5 +1,5 @@
 ﻿
-Imports ZXing
+Imports ZXing  'install zxing library by micheal jahn from nuget 
 Public Class barcode_genFrm
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim barwriter As New BarcodeWriter

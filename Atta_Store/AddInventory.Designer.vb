@@ -42,17 +42,18 @@ Partial Class AddInventory
         Me.added_by_txt = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.txt_searchinvenotry = New System.Windows.Forms.TextBox()
         CType(Me.get_inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'get_inventory
         '
         Me.get_inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.get_inventory.Location = New System.Drawing.Point(30, 309)
+        Me.get_inventory.Location = New System.Drawing.Point(30, 368)
         Me.get_inventory.Name = "get_inventory"
         Me.get_inventory.RowHeadersWidth = 51
         Me.get_inventory.RowTemplate.Height = 24
-        Me.get_inventory.Size = New System.Drawing.Size(801, 198)
+        Me.get_inventory.Size = New System.Drawing.Size(801, 357)
         Me.get_inventory.TabIndex = 25
         '
         'in_date
@@ -209,11 +210,19 @@ Partial Class AddInventory
         '
         Me.ToolTip1.ToolTipTitle = "Add New Category"
         '
+        'txt_searchinvenotry
+        '
+        Me.txt_searchinvenotry.Location = New System.Drawing.Point(546, 315)
+        Me.txt_searchinvenotry.Name = "txt_searchinvenotry"
+        Me.txt_searchinvenotry.Size = New System.Drawing.Size(285, 22)
+        Me.txt_searchinvenotry.TabIndex = 33
+        '
         'AddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(858, 519)
+        Me.ClientSize = New System.Drawing.Size(858, 737)
+        Me.Controls.Add(Me.txt_searchinvenotry)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.added_by_txt)
         Me.Controls.Add(Me.instock_txt)
@@ -259,4 +268,5 @@ Partial Class AddInventory
     Public WithEvents added_by_txt As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents txt_searchinvenotry As TextBox
 End Class

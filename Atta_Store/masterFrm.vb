@@ -81,4 +81,39 @@ Public Class masterFrm
         sale_filter()
         profit_filter()
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+    Private Sub search_txt()
+        Dim str As String
+        Try
+            con.Open()
+            Dim dfrom1 As DateTime = DateTimePicker3.Value
+            Dim dto1 As DateTime = DateTimePicker4.Value
+            str = "Select * from sell_tbl  where  date >= '" & Format(dfrom1, "MM-dd-yyyy") & "' AND date <='" & Format(dto1, "MM-dd-yyyy") & "'"
+            cmd = New SqlCommand(str, con)
+            da = New SqlDataAdapter(cmd)
+            ds = New DataSet
+            da.Fill(ds, "sell_tbl")
+            con.Close()
+            DataGridView1.DataSource = ds
+            DataGridView1.DataMember = "sell_tbl"
+            DataGridView1.Visible = True
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Failed:Product Name Search", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub txt_searchinvenotry_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub DateTimePicker3_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker3.ValueChanged
+        search_txt()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Dashboard_frm.Show()
+    End Sub
 End Class

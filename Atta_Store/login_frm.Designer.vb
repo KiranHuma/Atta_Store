@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class login_frm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class login_frm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login_frm))
         Me.Label3 = New System.Windows.Forms.Label()
@@ -35,16 +35,22 @@ Partial Class login_frm
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.label6 = New System.Windows.Forms.Label()
         Me.loginBtn = New System.Windows.Forms.Button()
+        Me.button2 = New System.Windows.Forms.Label()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panel3.SuspendLayout()
         CType(Me.pictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(84, 153)
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Location = New System.Drawing.Point(397, 252)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(69, 17)
         Me.Label3.TabIndex = 90
@@ -53,7 +59,8 @@ Partial Class login_frm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(84, 104)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Location = New System.Drawing.Point(397, 203)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(75, 17)
         Me.Label2.TabIndex = 89
@@ -62,7 +69,8 @@ Partial Class login_frm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(84, 54)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Location = New System.Drawing.Point(397, 153)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(81, 17)
         Me.Label1.TabIndex = 88
@@ -76,7 +84,7 @@ Partial Class login_frm
         Me.selectUser.ForeColor = System.Drawing.Color.Black
         Me.selectUser.FormattingEnabled = True
         Me.selectUser.Items.AddRange(New Object() {"User", "Admin"})
-        Me.selectUser.Location = New System.Drawing.Point(199, 51)
+        Me.selectUser.Location = New System.Drawing.Point(512, 150)
         Me.selectUser.Name = "selectUser"
         Me.selectUser.Size = New System.Drawing.Size(269, 24)
         Me.selectUser.TabIndex = 87
@@ -86,7 +94,7 @@ Partial Class login_frm
         Me.panel3.BackColor = System.Drawing.Color.White
         Me.panel3.Controls.Add(Me.pictureBox3)
         Me.panel3.Controls.Add(Me.txtPass)
-        Me.panel3.Location = New System.Drawing.Point(199, 133)
+        Me.panel3.Location = New System.Drawing.Point(512, 232)
         Me.panel3.Name = "panel3"
         Me.panel3.Size = New System.Drawing.Size(272, 37)
         Me.panel3.TabIndex = 86
@@ -122,7 +130,7 @@ Partial Class login_frm
         Me.Panel4.BackColor = System.Drawing.Color.White
         Me.Panel4.Controls.Add(Me.pictureBox2)
         Me.Panel4.Controls.Add(Me.txtUsername)
-        Me.Panel4.Location = New System.Drawing.Point(199, 90)
+        Me.Panel4.Location = New System.Drawing.Point(512, 189)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(272, 37)
         Me.Panel4.TabIndex = 85
@@ -155,7 +163,8 @@ Partial Class login_frm
         'label6
         '
         Me.label6.AutoSize = True
-        Me.label6.Location = New System.Drawing.Point(160, 279)
+        Me.label6.BackColor = System.Drawing.Color.Transparent
+        Me.label6.Location = New System.Drawing.Point(407, 335)
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(46, 17)
         Me.label6.TabIndex = 84
@@ -172,7 +181,7 @@ Partial Class login_frm
         Me.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.loginBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.loginBtn.ForeColor = System.Drawing.Color.White
-        Me.loginBtn.Location = New System.Drawing.Point(199, 186)
+        Me.loginBtn.Location = New System.Drawing.Point(512, 285)
         Me.loginBtn.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.loginBtn.Name = "loginBtn"
         Me.loginBtn.Size = New System.Drawing.Size(272, 34)
@@ -180,11 +189,62 @@ Partial Class login_frm
         Me.loginBtn.Text = "&Login"
         Me.loginBtn.UseVisualStyleBackColor = False
         '
+        'button2
+        '
+        Me.button2.AutoSize = True
+        Me.button2.BackColor = System.Drawing.Color.Transparent
+        Me.button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.button2.ForeColor = System.Drawing.Color.Black
+        Me.button2.Location = New System.Drawing.Point(634, 393)
+        Me.button2.Name = "button2"
+        Me.button2.Size = New System.Drawing.Size(75, 20)
+        Me.button2.TabIndex = 92
+        Me.button2.Text = "&Sign Up"
+        '
+        'label7
+        '
+        Me.label7.AutoSize = True
+        Me.label7.BackColor = System.Drawing.Color.Transparent
+        Me.label7.Location = New System.Drawing.Point(504, 393)
+        Me.label7.Name = "label7"
+        Me.label7.Size = New System.Drawing.Size(131, 17)
+        Me.label7.TabIndex = 91
+        Me.label7.Text = "Not a member yet?|"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Monotype Corsiva", 48.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(442, 9)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(342, 97)
+        Me.Label4.TabIndex = 94
+        Me.Label4.Text = "Atta Store"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(-8, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(400, 480)
+        Me.PictureBox1.TabIndex = 93
+        Me.PictureBox1.TabStop = False
+        '
         'login_frm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(523, 335)
+        Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(833, 479)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.button2)
+        Me.Controls.Add(Me.label7)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -193,6 +253,8 @@ Partial Class login_frm
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.label6)
         Me.Controls.Add(Me.loginBtn)
+        Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "login_frm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "login_frm"
@@ -202,6 +264,7 @@ Partial Class login_frm
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -219,4 +282,8 @@ Partial Class login_frm
     Friend WithEvents txtUsername As TextBox
     Private WithEvents label6 As Label
     Friend WithEvents loginBtn As Button
+    Private WithEvents button2 As Label
+    Private WithEvents label7 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

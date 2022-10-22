@@ -25,6 +25,7 @@ Partial Class Dashboard_frm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -54,11 +55,21 @@ Partial Class Dashboard_frm
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Bill"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(31, 192)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(107, 17)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Create Barcode"
+        '
         'Dashboard_frm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(955, 680)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -72,4 +83,5 @@ Partial Class Dashboard_frm
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

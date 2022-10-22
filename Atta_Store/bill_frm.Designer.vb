@@ -211,6 +211,7 @@ Partial Class bill_frm
         Me.total_sale_Price.Size = New System.Drawing.Size(190, 22)
         Me.total_sale_Price.TabIndex = 12
         Me.total_sale_Price.Text = "0"
+        Me.total_sale_Price.Visible = False
         '
         'original_price_txt
         '
@@ -218,6 +219,7 @@ Partial Class bill_frm
         Me.original_price_txt.Name = "original_price_txt"
         Me.original_price_txt.Size = New System.Drawing.Size(199, 22)
         Me.original_price_txt.TabIndex = 12
+        Me.original_price_txt.Visible = False
         '
         'Label7
         '
@@ -227,6 +229,7 @@ Partial Class bill_frm
         Me.Label7.Size = New System.Drawing.Size(83, 17)
         Me.Label7.TabIndex = 20
         Me.Label7.Text = "Actual Price"
+        Me.Label7.Visible = False
         '
         'totalactual_price_txt
         '
@@ -235,6 +238,7 @@ Partial Class bill_frm
         Me.totalactual_price_txt.Size = New System.Drawing.Size(199, 22)
         Me.totalactual_price_txt.TabIndex = 21
         Me.totalactual_price_txt.Text = "0"
+        Me.totalactual_price_txt.Visible = False
         '
         'Label8
         '
@@ -244,6 +248,7 @@ Partial Class bill_frm
         Me.Label8.Size = New System.Drawing.Size(119, 17)
         Me.Label8.TabIndex = 22
         Me.Label8.Text = "Actual Price Total"
+        Me.Label8.Visible = False
         '
         'profit_txt
         '
@@ -270,6 +275,7 @@ Partial Class bill_frm
         Me.Label10.Size = New System.Drawing.Size(77, 17)
         Me.Label10.TabIndex = 26
         Me.Label10.Text = "Total Profit"
+        Me.Label10.Visible = False
         '
         'totprofit
         '
@@ -278,6 +284,7 @@ Partial Class bill_frm
         Me.totprofit.Size = New System.Drawing.Size(199, 22)
         Me.totprofit.TabIndex = 25
         Me.totprofit.Text = "0"
+        Me.totprofit.Visible = False
         '
         'TabControl1
         '

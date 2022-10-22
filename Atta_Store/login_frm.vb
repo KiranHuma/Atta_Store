@@ -30,7 +30,7 @@ Public Class login_frm
         If selectUser.Text = "User" Then
 
             Dim con As New SqlConnection(cs) ' making connection
-            Dim sda As New SqlDataAdapter("SELECT COUNT(*) FROM Users WHERE Username='" & txtUsername.Text & "' AND Password='" & txtPass.Text & "' AND UserRole='user'", con)
+            Dim sda As New SqlDataAdapter("SELECT COUNT(*) FROM Users WHERE Username='" & txtUsername.Text & "' AND Password='" & txtPass.Text & "' ", con)
             ' in above line the program is selecting the whole data from table and the matching it with the user name and password provided by user. 
             Dim dt As New DataTable() 'this is creating a virtual table
             sda.Fill(dt)
@@ -46,22 +46,30 @@ Public Class login_frm
             End If
         ElseIf selectUser.Text = "Admin" Then
             Dim con As New SqlConnection(cs) ' making connection
-            Dim sda As New SqlDataAdapter("SELECT COUNT(*) FROM Users WHERE Username='" & txtUsername.Text & "' AND UserRole='admin'", con)
+            Dim sda As New SqlDataAdapter("SELECT COUNT(*) FROM admin_tb WHERE Username='" & txtUsername.Text & "'  AND Password='" & txtPass.Text & "'", con)
             ' in above line the program is selecting the whole data from table and the matching it with the user name and password provided by user. 
             Dim dt As New DataTable() 'this is creating a virtual table
             sda.Fill(dt)
             If dt.Rows(0)(0).ToString() = "1" Then
 
-
-                signup_frm.Show()
+                AddInventory.added_by_txt.Text = Me.txtUsername.Text
+                bill_frm.sell_by.Text = Me.txtUsername.Text
+                masterFrm.Show()
                 Me.Close()
             Else
                 MessageBox.Show("Your username Or password is not match", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 label6.ForeColor = Color.Red
                 label6.Text = " Not succsessfully login "
+
+
             End If
         Else
             MessageBox.Show("Select your choice", "ADMIN or USER", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
+
+    Private Sub button2_Click_1(sender As Object, e As EventArgs) Handles button2.Click
+        signup_frm.Show()
+        Me.Close()
     End Sub
 End Class

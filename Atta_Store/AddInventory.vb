@@ -218,4 +218,25 @@ Public Class AddInventory
         addnewcategory_frm.Show()
         Me.Close()
     End Sub
+    Private Sub search_txt()
+        Dim str As String
+        Try
+            con.Open()
+            str = "Select * from add_invent_tbl where in_product_name like '" & txt_searchinvenotry.Text & "%'"
+            cmd = New SqlCommand(str, con)
+            da = New SqlDataAdapter(cmd)
+            ds = New DataSet
+            da.Fill(ds, "add_invent_tbl")
+            con.Close()
+            get_inventory.DataSource = ds
+            get_inventory.DataMember = "add_invent_tbl"
+            get_inventory.Visible = True
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Failed:Product Name Search", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txt_searchinvenotry.TextChanged
+        search_txt()
+    End Sub
 End Class

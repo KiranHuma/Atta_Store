@@ -40,3 +40,4 @@ D:\Vb projects\Atta_Store\Atta_Store\bin\Debug\zxing.presentation.dll
 D:\Vb projects\Atta_Store\Atta_Store\bin\Debug\zxing.xml
 D:\Vb projects\Atta_Store\Atta_Store\bin\Debug\zxing.presentation.xml
 D:\Vb projects\Atta_Store\Atta_Store\obj\Debug\Atta_Store.barcode_genFrm.resources
+D:\Vb projects\Atta_Store\Atta_Store\obj\Debug\Atta_Store.signup_frm.resources
