@@ -287,18 +287,21 @@ Public Class bill_frm
 
     End Sub
     Private Sub search_txt()
+
+
+
         Dim str As String
         Try
             con.Open()
-            str = "Select inven_Id as[ID],in_barcode as [Barcode],in_product_name as [Product Name],in_prod_price as [Product Price],in_add_by as [Add By],int_date as [Date],status as [Status] from add_invent_tbl where in_product_name like '" & txt_searchinvenotry.Text & "%'"
+            str = "Select inven_Id as[ID],in_barcode as [Barcode],in_product_name as [Product Name],in_prod_price as [Product Price],in_add_by as [Add By],int_date as [Date],status as [Status] from add_invent_tbl where in_product_name  like '" & txt_searchinvenotry.Text & "%' And status='sell'"
             cmd = New SqlCommand(str, con)
             da = New SqlDataAdapter(cmd)
             ds = New DataSet
-            da.Fill(ds, "add_invent_tbl")
+            da.Fill(ds, "category_tbl")
             con.Close()
-            source2.DataSource = ds
-            get_inventory.DataMember = "add_invent_tbl"
-            get_inventory.Visible = True
+            get_returned.DataSource = ds
+            get_returned.DataMember = "category_tbl"
+            get_returned.Visible = True
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Failed:Product Name Search", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Dispose()
@@ -333,8 +336,8 @@ Public Class bill_frm
             Dim dt As New DataTable
             da.Fill(dt)
             source2.DataSource = dt
-            get_inventory.DataSource = dt
-            get_inventory.Refresh()
+            get_returned.DataSource = dt
+            get_returned.Refresh()
         Catch ex As Exception
             MessageBox.Show("Failed:Retrieving Data" & ex.Message)
             Me.Dispose()
@@ -352,13 +355,13 @@ Public Class bill_frm
         getdata_sell()
     End Sub
 
-    Private Sub get_inventory_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles get_inventory.CellContentClick
+    Private Sub get_inventory_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles get_returned.CellContentClick
 
     End Sub
 
-    Private Sub get_inventory_MouseClick(sender As Object, e As MouseEventArgs) Handles get_inventory.MouseClick
+    Private Sub get_inventory_MouseClick(sender As Object, e As MouseEventArgs) Handles get_returned.MouseClick
 
-        Me.barcode_update_txt.Text = get_inventory.CurrentRow.Cells(1).Value.ToString
+        Me.barcode_update_txt.Text = get_returned.CurrentRow.Cells(1).Value.ToString
     End Sub
 
     Private Sub ReturnProductToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReturnProductToolStripMenuItem.Click
@@ -366,6 +369,9 @@ Public Class bill_frm
         getdata_sell()
     End Sub
     Private Sub search_txt_invetory()
+
+
+
         Dim str As String
         Try
             con.Open()
@@ -375,7 +381,7 @@ Public Class bill_frm
             ds = New DataSet
             da.Fill(ds, "category_tbl")
             con.Close()
-            source2.DataSource = ds
+            check_inventory.DataSource = ds
             check_inventory.DataMember = "category_tbl"
             check_inventory.Visible = True
         Catch ex As Exception
@@ -407,5 +413,9 @@ Public Class bill_frm
 
     Private Sub TabPage2_Enter(sender As Object, e As EventArgs) Handles TabPage2.Enter
         getdata_inventory()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
     End Sub
 End Class

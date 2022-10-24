@@ -65,8 +65,10 @@ Partial Class bill_frm
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.barcode_update_txt = New System.Windows.Forms.TextBox()
         Me.return_update_lbl = New System.Windows.Forms.Label()
-        Me.get_inventory = New System.Windows.Forms.DataGridView()
+        Me.get_returned = New System.Windows.Forms.DataGridView()
         Me.txt_searchinvenotry = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -76,7 +78,7 @@ Partial Class bill_frm
         CType(Me.check_inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
-        CType(Me.get_inventory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.get_returned, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'sell_barcode
@@ -102,7 +104,7 @@ Partial Class bill_frm
         '
         'sell_by
         '
-        Me.sell_by.Location = New System.Drawing.Point(184, 217)
+        Me.sell_by.Location = New System.Drawing.Point(184, 206)
         Me.sell_by.Name = "sell_by"
         Me.sell_by.Size = New System.Drawing.Size(232, 22)
         Me.sell_by.TabIndex = 3
@@ -137,7 +139,7 @@ Partial Class bill_frm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(83, 221)
+        Me.Label4.Location = New System.Drawing.Point(83, 210)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(51, 17)
         Me.Label4.TabIndex = 7
@@ -146,7 +148,7 @@ Partial Class bill_frm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(83, 261)
+        Me.Label5.Location = New System.Drawing.Point(83, 250)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(38, 17)
         Me.Label5.TabIndex = 8
@@ -154,7 +156,7 @@ Partial Class bill_frm
         '
         'sell_date
         '
-        Me.sell_date.Location = New System.Drawing.Point(184, 256)
+        Me.sell_date.Location = New System.Drawing.Point(184, 245)
         Me.sell_date.Name = "sell_date"
         Me.sell_date.Size = New System.Drawing.Size(232, 22)
         Me.sell_date.TabIndex = 9
@@ -162,9 +164,11 @@ Partial Class bill_frm
         'sell_qty
         '
         Me.sell_qty.AutoSize = True
-        Me.sell_qty.Location = New System.Drawing.Point(763, 120)
+        Me.sell_qty.Font = New System.Drawing.Font("Showcard Gothic", 22.2!, System.Drawing.FontStyle.Bold)
+        Me.sell_qty.ForeColor = System.Drawing.Color.SteelBlue
+        Me.sell_qty.Location = New System.Drawing.Point(782, 145)
         Me.sell_qty.Name = "sell_qty"
-        Me.sell_qty.Size = New System.Drawing.Size(16, 17)
+        Me.sell_qty.Size = New System.Drawing.Size(37, 47)
         Me.sell_qty.TabIndex = 10
         Me.sell_qty.Text = "1"
         '
@@ -212,19 +216,21 @@ Partial Class bill_frm
         '
         Me.list_richtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.list_richtxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.list_richtxt.Location = New System.Drawing.Point(18, 387)
+        Me.list_richtxt.Location = New System.Drawing.Point(8, 386)
         Me.list_richtxt.Name = "list_richtxt"
         Me.list_richtxt.ReadOnly = True
-        Me.list_richtxt.Size = New System.Drawing.Size(1211, 301)
+        Me.list_richtxt.Size = New System.Drawing.Size(1042, 301)
         Me.list_richtxt.TabIndex = 18
         Me.list_richtxt.Text = ""
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(754, 63)
+        Me.Label6.Font = New System.Drawing.Font("Showcard Gothic", 22.2!, System.Drawing.FontStyle.Bold)
+        Me.Label6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Label6.Location = New System.Drawing.Point(710, 63)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(43, 17)
+        Me.Label6.Size = New System.Drawing.Size(146, 47)
         Me.Label6.TabIndex = 19
         Me.Label6.Text = "Stock"
         '
@@ -310,7 +316,7 @@ Partial Class bill_frm
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1270, 824)
+        Me.TabControl1.Size = New System.Drawing.Size(1066, 724)
         Me.TabControl1.TabIndex = 27
         '
         'TabPage1
@@ -332,14 +338,14 @@ Partial Class bill_frm
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1262, 795)
+        Me.TabPage1.Size = New System.Drawing.Size(1058, 695)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Sell"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Navy
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.SteelBlue
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.71856!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.28144!))
@@ -347,7 +353,7 @@ Partial Class bill_frm
         Me.TableLayoutPanel1.Controls.Add(Me.Label12, 0, 0)
         Me.TableLayoutPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TableLayoutPanel1.ForeColor = System.Drawing.Color.Coral
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(895, 329)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(685, 329)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -386,7 +392,7 @@ Partial Class bill_frm
         Me.Panel2.Controls.Add(Me.original_price_txt)
         Me.Panel2.Controls.Add(Me.profit_txt)
         Me.Panel2.Controls.Add(Me.Label9)
-        Me.Panel2.Location = New System.Drawing.Point(1169, 83)
+        Me.Panel2.Location = New System.Drawing.Point(998, 181)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(21, 86)
         Me.Panel2.TabIndex = 30
@@ -408,7 +414,7 @@ Partial Class bill_frm
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Button2.Location = New System.Drawing.Point(1208, 18)
+        Me.Button2.Location = New System.Drawing.Point(1004, 6)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(46, 39)
         Me.Button2.TabIndex = 28
@@ -416,12 +422,13 @@ Partial Class bill_frm
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button3)
         Me.TabPage2.Controls.Add(Me.check_inventory)
         Me.TabPage2.Controls.Add(Me.txt_seacrh_inven)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1262, 795)
+        Me.TabPage2.Size = New System.Drawing.Size(1058, 695)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Check Inventory"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -435,12 +442,12 @@ Partial Class bill_frm
         Me.check_inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.check_inventory.ContextMenuStrip = Me.ContextMenuStrip1
         Me.check_inventory.GridColor = System.Drawing.Color.White
-        Me.check_inventory.Location = New System.Drawing.Point(26, 96)
+        Me.check_inventory.Location = New System.Drawing.Point(8, 135)
         Me.check_inventory.Name = "check_inventory"
         Me.check_inventory.RowHeadersWidth = 51
         Me.check_inventory.RowTemplate.Height = 24
         Me.check_inventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.check_inventory.Size = New System.Drawing.Size(1210, 650)
+        Me.check_inventory.Size = New System.Drawing.Size(1042, 545)
         Me.check_inventory.TabIndex = 36
         '
         'ContextMenuStrip1
@@ -458,28 +465,29 @@ Partial Class bill_frm
         '
         'txt_seacrh_inven
         '
-        Me.txt_seacrh_inven.Location = New System.Drawing.Point(951, 48)
+        Me.txt_seacrh_inven.Location = New System.Drawing.Point(751, 96)
         Me.txt_seacrh_inven.Name = "txt_seacrh_inven"
         Me.txt_seacrh_inven.Size = New System.Drawing.Size(285, 22)
         Me.txt_seacrh_inven.TabIndex = 37
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Button4)
         Me.TabPage3.Controls.Add(Me.barcode_update_txt)
         Me.TabPage3.Controls.Add(Me.return_update_lbl)
-        Me.TabPage3.Controls.Add(Me.get_inventory)
+        Me.TabPage3.Controls.Add(Me.get_returned)
         Me.TabPage3.Controls.Add(Me.txt_searchinvenotry)
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1262, 795)
+        Me.TabPage3.Size = New System.Drawing.Size(1058, 695)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Returned Products"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'barcode_update_txt
         '
-        Me.barcode_update_txt.Location = New System.Drawing.Point(484, 62)
+        Me.barcode_update_txt.Location = New System.Drawing.Point(339, 62)
         Me.barcode_update_txt.Name = "barcode_update_txt"
         Me.barcode_update_txt.Size = New System.Drawing.Size(285, 22)
         Me.barcode_update_txt.TabIndex = 37
@@ -495,37 +503,65 @@ Partial Class bill_frm
         Me.return_update_lbl.TabIndex = 36
         Me.return_update_lbl.Text = "Label13"
         '
-        'get_inventory
+        'get_returned
         '
-        Me.get_inventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.get_inventory.BackgroundColor = System.Drawing.Color.White
-        Me.get_inventory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.get_inventory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
-        Me.get_inventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.get_inventory.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.get_inventory.GridColor = System.Drawing.Color.White
-        Me.get_inventory.Location = New System.Drawing.Point(30, 124)
-        Me.get_inventory.Name = "get_inventory"
-        Me.get_inventory.RowHeadersWidth = 51
-        Me.get_inventory.RowTemplate.Height = 24
-        Me.get_inventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.get_inventory.Size = New System.Drawing.Size(1210, 650)
-        Me.get_inventory.TabIndex = 34
+        Me.get_returned.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.get_returned.BackgroundColor = System.Drawing.Color.White
+        Me.get_returned.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.get_returned.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
+        Me.get_returned.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.get_returned.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.get_returned.GridColor = System.Drawing.Color.White
+        Me.get_returned.Location = New System.Drawing.Point(8, 135)
+        Me.get_returned.Name = "get_returned"
+        Me.get_returned.RowHeadersWidth = 51
+        Me.get_returned.RowTemplate.Height = 24
+        Me.get_returned.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.get_returned.Size = New System.Drawing.Size(1042, 552)
+        Me.get_returned.TabIndex = 34
         '
         'txt_searchinvenotry
         '
-        Me.txt_searchinvenotry.Location = New System.Drawing.Point(955, 76)
+        Me.txt_searchinvenotry.Location = New System.Drawing.Point(751, 96)
         Me.txt_searchinvenotry.Name = "txt_searchinvenotry"
         Me.txt_searchinvenotry.Size = New System.Drawing.Size(285, 22)
         Me.txt_searchinvenotry.TabIndex = 35
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Button3.Location = New System.Drawing.Point(1004, 6)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(46, 39)
+        Me.Button3.TabIndex = 38
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.Transparent
+        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Button4.Location = New System.Drawing.Point(1004, 6)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(46, 39)
+        Me.Button4.TabIndex = 39
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'bill_frm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1270, 824)
+        Me.ClientSize = New System.Drawing.Size(1066, 724)
         Me.Controls.Add(Me.TabControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "bill_frm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "k"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -542,7 +578,7 @@ Partial Class bill_frm
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
-        CType(Me.get_inventory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.get_returned, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -582,7 +618,7 @@ Partial Class bill_frm
     Friend WithEvents Label12 As Label
     Friend WithEvents total_sale_Price As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Private WithEvents get_inventory As DataGridView
+    Private WithEvents get_returned As DataGridView
     Friend WithEvents txt_searchinvenotry As TextBox
     Friend WithEvents return_update_lbl As Label
     Friend WithEvents barcode_update_txt As TextBox
@@ -590,4 +626,6 @@ Partial Class bill_frm
     Friend WithEvents ReturnProductToolStripMenuItem As ToolStripMenuItem
     Private WithEvents check_inventory As DataGridView
     Friend WithEvents txt_seacrh_inven As TextBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class
