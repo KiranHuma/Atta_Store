@@ -76,7 +76,7 @@ Public Class signup_frm
 			Dim connection As New SqlConnection(cs)
 			connection.Open()
 
-
+			Dim userrole As String = user_lbl.Text
 			Dim Username As String = txtUsername.Text
 
 			Dim Password As String = txtPass.Text
@@ -84,10 +84,10 @@ Public Class signup_frm
 
 			Dim Account_Creation_Date As String = txtDate.Text
 
-			Dim sqlquery As String = ("insert into Users(Username,Password,accunt_create)values('" & txtUsername.Text & "','" & txtPass.Text & "','" & txtDate.Text & "')")
+			Dim sqlquery As String = ("insert into Users(UserRole,Username,Password,accunt_create)values('" & user_lbl.Text & "','" & txtUsername.Text & "','" & txtPass.Text & "','" & txtDate.Text & "')")
 			Dim command As New SqlCommand(sqlquery, connection)
 
-
+			command.Parameters.AddWithValue("UserRole", userrole)
 			command.Parameters.AddWithValue("Username", Username)
 
 			command.Parameters.AddWithValue("Password", Password)
@@ -111,7 +111,7 @@ Public Class signup_frm
 
 	End Sub
 
-	Private Sub button1_Click(sender As Object, e As EventArgs) Handles button1.Click
+	Private Sub button1_Click(sender As Object, e As EventArgs)
 		Dim lg As New login_frm()
 		Me.Close()
 		lg.Show()
@@ -125,11 +125,11 @@ Public Class signup_frm
 		namecheck()
 	End Sub
 
-	Private Sub label10_Click(sender As Object, e As EventArgs) Handles label10.Click
+	Private Sub label10_Click(sender As Object, e As EventArgs)
 		Me.Close()
 	End Sub
 
-	Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+	Private Sub Button3_Click(sender As Object, e As EventArgs)
 
 	End Sub
 
@@ -144,5 +144,9 @@ Public Class signup_frm
 			label8.ForeColor = Color.Red
 		End If
 
+	End Sub
+
+	Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+		Me.Close()
 	End Sub
 End Class

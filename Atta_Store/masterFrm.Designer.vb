@@ -22,10 +22,12 @@ Partial Class masterFrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(masterFrm))
         Me.Master_profit = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.sale_text = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -39,7 +41,7 @@ Partial Class masterFrm
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Sale.SuspendLayout()
@@ -48,7 +50,7 @@ Partial Class masterFrm
         '
         'Master_profit
         '
-        Me.Master_profit.Location = New System.Drawing.Point(305, 199)
+        Me.Master_profit.Location = New System.Drawing.Point(413, 260)
         Me.Master_profit.Name = "Master_profit"
         Me.Master_profit.Size = New System.Drawing.Size(254, 22)
         Me.Master_profit.TabIndex = 0
@@ -56,7 +58,7 @@ Partial Class masterFrm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(253, 202)
+        Me.Label1.Location = New System.Drawing.Point(361, 263)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(41, 17)
         Me.Label1.TabIndex = 2
@@ -75,6 +77,9 @@ Partial Class masterFrm
         '
         'TabPage1
         '
+        Me.TabPage1.BackgroundImage = CType(resources.GetObject("TabPage1.BackgroundImage"), System.Drawing.Image)
+        Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPage1.Controls.Add(Me.Button3)
         Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.sale_text)
         Me.TabPage1.Controls.Add(Me.Label4)
@@ -93,9 +98,18 @@ Partial Class masterFrm
         Me.TabPage1.Text = "Profit"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(562, 20)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(90, 35)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Dashboard"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'sale_text
         '
-        Me.sale_text.Location = New System.Drawing.Point(305, 158)
+        Me.sale_text.Location = New System.Drawing.Point(413, 219)
         Me.sale_text.Name = "sale_text"
         Me.sale_text.Size = New System.Drawing.Size(254, 22)
         Me.sale_text.TabIndex = 8
@@ -103,7 +117,7 @@ Partial Class masterFrm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(253, 161)
+        Me.Label4.Location = New System.Drawing.Point(361, 222)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 17)
         Me.Label4.TabIndex = 9
@@ -111,7 +125,7 @@ Partial Class masterFrm
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(583, 118)
+        Me.Button2.Location = New System.Drawing.Point(691, 179)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 7
@@ -121,7 +135,7 @@ Partial Class masterFrm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(437, 57)
+        Me.Label3.Location = New System.Drawing.Point(545, 118)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(25, 17)
         Me.Label3.TabIndex = 6
@@ -130,7 +144,7 @@ Partial Class masterFrm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(80, 52)
+        Me.Label2.Location = New System.Drawing.Point(188, 113)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(40, 17)
         Me.Label2.TabIndex = 5
@@ -138,20 +152,22 @@ Partial Class masterFrm
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(468, 52)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(576, 113)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(258, 22)
         Me.DateTimePicker2.TabIndex = 4
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(126, 52)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(234, 113)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(241, 22)
         Me.DateTimePicker1.TabIndex = 3
         '
         'Sale
         '
+        Me.Sale.BackgroundImage = CType(resources.GetObject("Sale.BackgroundImage"), System.Drawing.Image)
+        Me.Sale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Sale.Controls.Add(Me.Label5)
         Me.Sale.Controls.Add(Me.Label6)
         Me.Sale.Controls.Add(Me.DateTimePicker3)
@@ -168,7 +184,7 @@ Partial Class masterFrm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(440, 94)
+        Me.Label5.Location = New System.Drawing.Point(459, 75)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(25, 17)
         Me.Label5.TabIndex = 10
@@ -177,7 +193,7 @@ Partial Class masterFrm
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(83, 89)
+        Me.Label6.Location = New System.Drawing.Point(102, 70)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(40, 17)
         Me.Label6.TabIndex = 9
@@ -185,14 +201,14 @@ Partial Class masterFrm
         '
         'DateTimePicker3
         '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(471, 89)
+        Me.DateTimePicker3.Location = New System.Drawing.Point(490, 70)
         Me.DateTimePicker3.Name = "DateTimePicker3"
         Me.DateTimePicker3.Size = New System.Drawing.Size(258, 22)
         Me.DateTimePicker3.TabIndex = 8
         '
         'DateTimePicker4
         '
-        Me.DateTimePicker4.Location = New System.Drawing.Point(129, 89)
+        Me.DateTimePicker4.Location = New System.Drawing.Point(148, 70)
         Me.DateTimePicker4.Name = "DateTimePicker4"
         Me.DateTimePicker4.Size = New System.Drawing.Size(241, 22)
         Me.DateTimePicker4.TabIndex = 7
@@ -200,21 +216,25 @@ Partial Class masterFrm
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(8, 209)
+        Me.DataGridView1.Location = New System.Drawing.Point(22, 126)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(863, 261)
+        Me.DataGridView1.Size = New System.Drawing.Size(849, 346)
         Me.DataGridView1.TabIndex = 0
         '
-        'Button1
+        'Button3
         '
-        Me.Button1.Location = New System.Drawing.Point(781, 6)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(90, 50)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Dashboard"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Button3.Location = New System.Drawing.Point(825, 6)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(46, 39)
+        Me.Button3.TabIndex = 28
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'masterFrm
         '
@@ -252,4 +272,5 @@ Partial Class masterFrm
     Friend WithEvents DateTimePicker3 As DateTimePicker
     Friend WithEvents DateTimePicker4 As DateTimePicker
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button3 As Button
 End Class

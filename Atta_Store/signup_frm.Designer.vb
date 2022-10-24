@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class signup_frm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,11 @@ Partial Class signup_frm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(signup_frm))
         Me.txtDate = New System.Windows.Forms.Label()
-        Me.label10 = New System.Windows.Forms.Label()
         Me.label4 = New System.Windows.Forms.Label()
-        Me.button1 = New System.Windows.Forms.Button()
         Me.label3 = New System.Windows.Forms.Label()
         Me.label8 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
@@ -39,60 +38,39 @@ Partial Class signup_frm
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.label12 = New System.Windows.Forms.Label()
         Me.panel1 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.user_lbl = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtDate
         '
         Me.txtDate.AutoSize = True
-        Me.txtDate.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.txtDate.Location = New System.Drawing.Point(559, 28)
+        Me.txtDate.BackColor = System.Drawing.Color.Transparent
+        Me.txtDate.ForeColor = System.Drawing.Color.Transparent
+        Me.txtDate.Location = New System.Drawing.Point(130, 28)
         Me.txtDate.Name = "txtDate"
         Me.txtDate.Size = New System.Drawing.Size(77, 17)
         Me.txtDate.TabIndex = 24
         Me.txtDate.Text = "Date today"
         '
-        'label10
-        '
-        Me.label10.AutoSize = True
-        Me.label10.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label10.ForeColor = System.Drawing.Color.Red
-        Me.label10.Location = New System.Drawing.Point(744, 9)
-        Me.label10.Name = "label10"
-        Me.label10.Size = New System.Drawing.Size(35, 32)
-        Me.label10.TabIndex = 25
-        Me.label10.Text = "X"
-        '
         'label4
         '
         Me.label4.AutoSize = True
         Me.label4.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label4.ForeColor = System.Drawing.Color.LightCoral
-        Me.label4.Location = New System.Drawing.Point(81, 368)
+        Me.label4.ForeColor = System.Drawing.Color.Black
+        Me.label4.Location = New System.Drawing.Point(81, 267)
         Me.label4.Name = "label4"
         Me.label4.Size = New System.Drawing.Size(115, 20)
         Me.label4.TabIndex = 9
         Me.label4.Text = "Password Again"
         '
-        'button1
-        '
-        Me.button1.Font = New System.Drawing.Font("Trebuchet MS", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.button1.Location = New System.Drawing.Point(322, 524)
-        Me.button1.Name = "button1"
-        Me.button1.Size = New System.Drawing.Size(102, 34)
-        Me.button1.TabIndex = 13
-        Me.button1.Text = "Login"
-        Me.button1.UseVisualStyleBackColor = True
-        '
         'label3
         '
         Me.label3.AutoSize = True
         Me.label3.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label3.ForeColor = System.Drawing.Color.LightCoral
-        Me.label3.Location = New System.Drawing.Point(81, 329)
+        Me.label3.ForeColor = System.Drawing.Color.Black
+        Me.label3.Location = New System.Drawing.Point(81, 228)
         Me.label3.Name = "label3"
         Me.label3.Size = New System.Drawing.Size(72, 20)
         Me.label3.TabIndex = 8
@@ -102,7 +80,7 @@ Partial Class signup_frm
         '
         Me.label8.AutoSize = True
         Me.label8.Font = New System.Drawing.Font("Trebuchet MS", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label8.Location = New System.Drawing.Point(446, 371)
+        Me.label8.Location = New System.Drawing.Point(446, 270)
         Me.label8.Name = "label8"
         Me.label8.Size = New System.Drawing.Size(44, 18)
         Me.label8.TabIndex = 14
@@ -113,8 +91,8 @@ Partial Class signup_frm
         '
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Trebuchet MS", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label1.ForeColor = System.Drawing.Color.LightCoral
-        Me.label1.Location = New System.Drawing.Point(81, 290)
+        Me.label1.ForeColor = System.Drawing.Color.Black
+        Me.label1.Location = New System.Drawing.Point(81, 189)
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(80, 20)
         Me.label1.TabIndex = 6
@@ -123,18 +101,18 @@ Partial Class signup_frm
         'txtPassAgain
         '
         Me.txtPassAgain.Font = New System.Drawing.Font("Trebuchet MS", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassAgain.Location = New System.Drawing.Point(222, 366)
+        Me.txtPassAgain.Location = New System.Drawing.Point(222, 265)
         Me.txtPassAgain.Name = "txtPassAgain"
         Me.txtPassAgain.Size = New System.Drawing.Size(218, 23)
         Me.txtPassAgain.TabIndex = 5
         '
         'button2
         '
-        Me.button2.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.button2.BackColor = System.Drawing.Color.SteelBlue
         Me.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button2.Font = New System.Drawing.Font("Trebuchet MS", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.button2.ForeColor = System.Drawing.Color.White
-        Me.button2.Location = New System.Drawing.Point(206, 524)
+        Me.button2.Location = New System.Drawing.Point(350, 319)
         Me.button2.Name = "button2"
         Me.button2.Size = New System.Drawing.Size(90, 34)
         Me.button2.TabIndex = 17
@@ -144,7 +122,7 @@ Partial Class signup_frm
         'txtPass
         '
         Me.txtPass.Font = New System.Drawing.Font("Trebuchet MS", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPass.Location = New System.Drawing.Point(222, 327)
+        Me.txtPass.Location = New System.Drawing.Point(222, 226)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(218, 23)
         Me.txtPass.TabIndex = 2
@@ -152,8 +130,9 @@ Partial Class signup_frm
         'label7
         '
         Me.label7.AutoSize = True
+        Me.label7.BackColor = System.Drawing.Color.Transparent
         Me.label7.Font = New System.Drawing.Font("Trebuchet MS", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label7.Location = New System.Drawing.Point(65, 504)
+        Me.label7.Location = New System.Drawing.Point(392, 486)
         Me.label7.Name = "label7"
         Me.label7.Size = New System.Drawing.Size(44, 18)
         Me.label7.TabIndex = 21
@@ -163,7 +142,7 @@ Partial Class signup_frm
         'txtUsername
         '
         Me.txtUsername.Font = New System.Drawing.Font("Trebuchet MS", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(222, 288)
+        Me.txtUsername.Location = New System.Drawing.Point(222, 187)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(218, 23)
         Me.txtUsername.TabIndex = 0
@@ -172,11 +151,12 @@ Partial Class signup_frm
         '
         Me.txtentry.AutoSize = True
         Me.txtentry.ForeColor = System.Drawing.Color.Black
-        Me.txtentry.Location = New System.Drawing.Point(219, 167)
+        Me.txtentry.Location = New System.Drawing.Point(415, 167)
         Me.txtentry.Name = "txtentry"
         Me.txtentry.Size = New System.Drawing.Size(16, 17)
         Me.txtentry.TabIndex = 12
         Me.txtentry.Text = "0"
+        Me.txtentry.Visible = False
         '
         'label11
         '
@@ -191,10 +171,10 @@ Partial Class signup_frm
         '
         'panel2
         '
-        Me.panel2.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.panel2.Location = New System.Drawing.Point(3, 138)
+        Me.panel2.BackColor = System.Drawing.Color.SteelBlue
+        Me.panel2.Location = New System.Drawing.Point(-66, 138)
         Me.panel2.Name = "panel2"
-        Me.panel2.Size = New System.Drawing.Size(576, 11)
+        Me.panel2.Size = New System.Drawing.Size(727, 11)
         Me.panel2.TabIndex = 23
         '
         'label12
@@ -210,56 +190,61 @@ Partial Class signup_frm
         '
         'panel1
         '
-        Me.panel1.BackColor = System.Drawing.Color.White
-        Me.panel1.Controls.Add(Me.Label2)
-        Me.panel1.Controls.Add(Me.Button3)
+        Me.panel1.BackColor = System.Drawing.Color.Transparent
+        Me.panel1.Controls.Add(Me.user_lbl)
         Me.panel1.Controls.Add(Me.label12)
         Me.panel1.Controls.Add(Me.panel2)
         Me.panel1.Controls.Add(Me.label11)
         Me.panel1.Controls.Add(Me.txtentry)
         Me.panel1.Controls.Add(Me.txtUsername)
-        Me.panel1.Controls.Add(Me.label7)
         Me.panel1.Controls.Add(Me.txtPass)
         Me.panel1.Controls.Add(Me.button2)
         Me.panel1.Controls.Add(Me.txtPassAgain)
         Me.panel1.Controls.Add(Me.label1)
         Me.panel1.Controls.Add(Me.label8)
         Me.panel1.Controls.Add(Me.label3)
-        Me.panel1.Controls.Add(Me.button1)
         Me.panel1.Controls.Add(Me.label4)
-        Me.panel1.Location = New System.Drawing.Point(104, 60)
+        Me.panel1.Location = New System.Drawing.Point(133, 48)
         Me.panel1.Name = "panel1"
-        Me.panel1.Size = New System.Drawing.Size(582, 588)
+        Me.panel1.Size = New System.Drawing.Size(606, 386)
         Me.panel1.TabIndex = 26
         '
-        'Button3
+        'user_lbl
         '
-        Me.Button3.Location = New System.Drawing.Point(427, 179)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 25
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.user_lbl.AutoSize = True
+        Me.user_lbl.ForeColor = System.Drawing.Color.Transparent
+        Me.user_lbl.Location = New System.Drawing.Point(192, 28)
+        Me.user_lbl.Name = "user_lbl"
+        Me.user_lbl.Size = New System.Drawing.Size(36, 17)
+        Me.user_lbl.TabIndex = 25
+        Me.user_lbl.Text = "user"
+        Me.user_lbl.Visible = False
         '
-        'Label2
+        'Button1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(339, 179)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(16, 17)
-        Me.Label2.TabIndex = 26
-        Me.Label2.Text = "0"
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Button1.Location = New System.Drawing.Point(733, 6)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(46, 39)
+        Me.Button1.TabIndex = 27
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'signup_frm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(791, 652)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.panel1)
-        Me.Controls.Add(Me.label10)
         Me.Controls.Add(Me.txtDate)
+        Me.Controls.Add(Me.label7)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "signup_frm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -272,9 +257,7 @@ Partial Class signup_frm
     End Sub
 
     Private WithEvents txtDate As Label
-    Private WithEvents label10 As Label
     Private WithEvents label4 As Label
-    Private WithEvents button1 As Button
     Private WithEvents label3 As Label
     Private WithEvents label8 As Label
     Private WithEvents label1 As Label
@@ -288,6 +271,6 @@ Partial Class signup_frm
     Private WithEvents panel2 As Panel
     Private WithEvents label12 As Label
     Private WithEvents panel1 As Panel
-    Friend WithEvents Button3 As Button
-    Private WithEvents Label2 As Label
+    Private WithEvents user_lbl As Label
+    Friend WithEvents Button1 As Button
 End Class

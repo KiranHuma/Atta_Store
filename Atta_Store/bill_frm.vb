@@ -32,7 +32,7 @@ Public Class bill_frm
         Dim con As New SqlConnection(cs)
         Try
 
-            Dim command As New SqlCommand("select * from add_invent_tbl where in_barcode='" & sell_barcode.Text & "'", con)
+            Dim command As New SqlCommand("select * from add_invent_tbl where in_barcode='" & sell_barcode.Text & "' AND in_quantity= 1", con)
             con.Open()
             cmd.Parameters.Clear()
             Dim read As SqlDataReader = command.ExecuteReader()
@@ -90,6 +90,26 @@ Public Class bill_frm
             cmd.Connection = con
             con.Open()
             cmd.CommandText = "UPDATE category_tbl SET in_stock_qty= '" & sell_qty.Text & "' where category_name='" & product_name.Text & "'"
+            cmd.ExecuteNonQuery()
+
+            welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
+            welcomemsg.Text = "'" & product_name.Text & "' details update successfully!"
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show("Data Not Updated" & ex.Message)
+            welcomemsg.ForeColor = System.Drawing.Color.Red
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub update_inventory_after_sell()
+        Try
+
+
+
+            con.ConnectionString = cs
+            cmd.Connection = con
+            con.Open()
+            cmd.CommandText = "UPDATE add_invent_tbl SET in_quantity= 0 ,status= '" & Label11.Text & "' where in_barcode='" & sell_barcode.Text & "'"
             cmd.ExecuteNonQuery()
 
             welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
@@ -254,6 +274,7 @@ Public Class bill_frm
             Total_actual_bill()
             Total_profit_bill()
             Total_profit()
+            update_inventory_after_sell()
             clear_previous_entity()
         End If
     End Sub
@@ -264,5 +285,127 @@ Public Class bill_frm
 
     Private Sub profit_txt_TextChanged(sender As Object, e As EventArgs) Handles profit_txt.TextChanged
 
+    End Sub
+    Private Sub search_txt()
+        Dim str As String
+        Try
+            con.Open()
+            str = "Select inven_Id as[ID],in_barcode as [Barcode],in_product_name as [Product Name],in_prod_price as [Product Price],in_add_by as [Add By],int_date as [Date],status as [Status] from add_invent_tbl where in_product_name like '" & txt_searchinvenotry.Text & "%'"
+            cmd = New SqlCommand(str, con)
+            da = New SqlDataAdapter(cmd)
+            ds = New DataSet
+            da.Fill(ds, "add_invent_tbl")
+            con.Close()
+            source2.DataSource = ds
+            get_inventory.DataMember = "add_invent_tbl"
+            get_inventory.Visible = True
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Failed:Product Name Search", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub update_inventory_return()
+        Try
+
+
+
+            con.ConnectionString = cs
+            cmd.Connection = con
+            con.Open()
+            cmd.CommandText = "UPDATE add_invent_tbl SET in_quantity= 1 ,status= 'Returned' where in_barcode='" & barcode_update_txt.Text & "'"
+            cmd.ExecuteNonQuery()
+
+            return_update_lbl.ForeColor = System.Drawing.Color.DarkGreen
+            return_update_lbl.Text = "'" & sell_barcode.Text & "' details update successfully!"
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show("Data Not Updated" & ex.Message)
+            welcomemsg.ForeColor = System.Drawing.Color.Red
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub getdata_sell()
+
+        Try
+            Dim con As New SqlConnection(cs)
+            con.Open()
+            Dim da As New SqlDataAdapter("Select inven_Id as[ID],in_barcode as [Barcode],in_product_name as [Product Name],in_prod_price as [Product Price],in_add_by as [Add By],int_date as [Date],status as [Status] from add_invent_tbl where status='sell'", con)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            source2.DataSource = dt
+            get_inventory.DataSource = dt
+            get_inventory.Refresh()
+        Catch ex As Exception
+            MessageBox.Show("Failed:Retrieving Data" & ex.Message)
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub txt_searchinvenotry_TextChanged(sender As Object, e As EventArgs) Handles txt_searchinvenotry.TextChanged
+        search_txt()
+        If txt_searchinvenotry.Text = "" Then
+
+        End If
+    End Sub
+
+
+    Private Sub TabPage3_Enter(sender As Object, e As EventArgs) Handles TabPage3.Enter
+        getdata_sell()
+    End Sub
+
+    Private Sub get_inventory_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles get_inventory.CellContentClick
+
+    End Sub
+
+    Private Sub get_inventory_MouseClick(sender As Object, e As MouseEventArgs) Handles get_inventory.MouseClick
+
+        Me.barcode_update_txt.Text = get_inventory.CurrentRow.Cells(1).Value.ToString
+    End Sub
+
+    Private Sub ReturnProductToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReturnProductToolStripMenuItem.Click
+        update_inventory_return()
+        getdata_sell()
+    End Sub
+    Private Sub search_txt_invetory()
+        Dim str As String
+        Try
+            con.Open()
+            str = "Select catgoery_id as[ID],category_name as [Product Name],catogery_price as [Product Price],in_stock_qty as [In_Stock] from category_tbl where category_name like '" & txt_seacrh_inven.Text & "%'"
+            cmd = New SqlCommand(str, con)
+            da = New SqlDataAdapter(cmd)
+            ds = New DataSet
+            da.Fill(ds, "category_tbl")
+            con.Close()
+            source2.DataSource = ds
+            check_inventory.DataMember = "category_tbl"
+            check_inventory.Visible = True
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Failed:Product Name Search", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub getdata_inventory()
+
+        Try
+            Dim con As New SqlConnection(cs)
+            con.Open()
+            Dim da As New SqlDataAdapter("Select catgoery_id as[ID],category_name as [Product Name],catogery_price as [Product Price],in_stock_qty as [In_Stock] from category_tbl", con)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            source2.DataSource = dt
+            check_inventory.DataSource = dt
+            check_inventory.Refresh()
+        Catch ex As Exception
+            MessageBox.Show("Failed:Retrieving Data" & ex.Message)
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub txt_seacrh_inven_TextChanged(sender As Object, e As EventArgs) Handles txt_seacrh_inven.TextChanged
+        search_txt_invetory()
+    End Sub
+
+
+
+    Private Sub TabPage2_Enter(sender As Object, e As EventArgs) Handles TabPage2.Enter
+        getdata_inventory()
     End Sub
 End Class

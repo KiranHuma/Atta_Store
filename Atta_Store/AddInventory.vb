@@ -36,7 +36,7 @@ Public Class AddInventory
             cmd.ExecuteNonQuery()
 
             welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
-            welcomemsg.Text = "'" & In_Id.Text & "' details saved successfully!"
+            welcomemsg.Text = "'" & pro_name.Text & "' details saved successfully!"
             con.Close()
         Catch ex As Exception
             MsgBox("Data Inserted Failed because " & ex.Message)
@@ -70,7 +70,7 @@ Public Class AddInventory
         Try
             Dim con As New SqlConnection(cs)
             con.Open()
-            Dim da As New SqlDataAdapter("Select * from add_invent_tbl", con)
+            Dim da As New SqlDataAdapter("Select inven_Id as[ID],in_barcode as [Barcode],in_product_name as [Product Name],in_prod_price as [Product Price],in_add_by as [Add By],int_date as [Date],status as [Status] from add_invent_tbl where status Is NULL OR status='wrong' or status='Returned'", con)
             Dim dt As New DataTable
             da.Fill(dt)
             source2.DataSource = dt
@@ -128,7 +128,7 @@ Public Class AddInventory
         Using connection As New SqlConnection(cs)
             Try
 
-                Dim command As New SqlCommand("SELECT SUM(in_quantity) AS instock FROM add_invent_tbl where in_product_name IS NOT NULL  AND in_product_name='" & pro_name.Text & "'", connection)
+                Dim command As New SqlCommand("SELECT SUM(in_quantity) AS instock FROM add_invent_tbl where in_product_name IS NOT NULL AND in_product_name='" & pro_name.Text & "'", connection)
                 connection.Open()
                 cmd.Parameters.Clear()
                 Dim read As SqlDataReader = command.ExecuteReader()
@@ -148,21 +148,7 @@ Public Class AddInventory
 
     End Sub
 
-    Private Sub Add_btn_Click(sender As Object, e As EventArgs) Handles Add_btn.Click
-        txtboxid()
-        insert()
-        add_stock()
-        instock_edit()
-        barcode_txt.Text = ""
-        pro_name.Text = ""
-        product_price.Text = ""
 
-
-        '  getdata()
-
-        '  FillCombo_product_name()
-
-    End Sub
     Private Sub get_price()
         Dim con As New SqlConnection(cs)
         Try
@@ -197,7 +183,7 @@ Public Class AddInventory
             cmd.ExecuteNonQuery()
 
             welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
-            welcomemsg.Text = "'" & In_Id.Text & "' details update successfully!"
+            welcomemsg.Text = "'" & pro_name.Text & "' details saved successfully!"
             con.Close()
         Catch ex As Exception
             MessageBox.Show("Data Not Updated" & ex.Message)
@@ -213,16 +199,12 @@ Public Class AddInventory
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        addnewcategory_frm.Show()
-        Me.Close()
-    End Sub
     Private Sub search_txt()
         Dim str As String
         Try
             con.Open()
-            str = "Select * from add_invent_tbl where in_product_name like '" & txt_searchinvenotry.Text & "%'"
+            str = "Select inven_Id as[ID],in_barcode as [Barcode],in_product_name as [Product Name],in_prod_price as [Product Price],in_add_by as [Add By],int_date as [Date],status as [Status] from add_invent_tbl where in_product_name like '" & txt_searchinvenotry.Text & "%' AND  status Is NULL OR status='wrong' or status='Returned'"
             cmd = New SqlCommand(str, con)
             da = New SqlDataAdapter(cmd)
             ds = New DataSet
@@ -238,5 +220,150 @@ Public Class AddInventory
     End Sub
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txt_searchinvenotry.TextChanged
         search_txt()
+    End Sub
+
+
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+
+
+
+
+    Private Sub Add_btn_Click(sender As Object, e As EventArgs) Handles Add_btn.Click
+        txtboxid()
+        insert()
+        add_stock()
+        instock_edit()
+        barcode_txt.Text = ""
+        pro_name.Text = ""
+        product_price.Text = ""
+
+
+        getdata()
+
+        '  FillCombo_product_name()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        addnewcategory_frm.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dashboard_frm.Show()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
+
+    End Sub
+    Private Sub edit_wrong()
+        Try
+
+
+
+            con.ConnectionString = cs
+            cmd.Connection = con
+            con.Open()
+            cmd.CommandText = "UPDATE add_invent_tbl SET status= '" & wrong_lbl.Text & "',in_quantity= '0' where inven_Id='" & edit_id.Text & "'"
+            cmd.ExecuteNonQuery()
+
+            welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
+            welcomemsg.Text = "'" & edit_id.Text & "' details update successfully!"
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show("Data Not Updated" & ex.Message)
+            welcomemsg.ForeColor = System.Drawing.Color.Red
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub instock_inventory_wrong()
+
+        Using connection As New SqlConnection(cs)
+            Try
+
+                Dim command As New SqlCommand("SELECT SUM(in_quantity) AS instock FROM add_invent_tbl where in_product_name IS NOT NULL AND in_product_name='" & edit_productname.Text & "'", connection)
+                connection.Open()
+                cmd.Parameters.Clear()
+                Dim read As SqlDataReader = command.ExecuteReader()
+
+                Do While read.Read()
+                    instock_txt.Text = (read("instock").ToString())
+
+                Loop
+                read.Close()
+
+            Catch ex As Exception
+
+                MessageBox.Show(ex.Message)
+                Me.Dispose()
+            End Try
+        End Using
+
+    End Sub
+    Private Sub edit_wrong_quatity()
+        Try
+
+
+
+            con.ConnectionString = cs
+            cmd.Connection = con
+            con.Open()
+            cmd.CommandText = "UPDATE category_tbl SET in_stock_qty= '" & instock_txt.Text & "' where category_name='" & edit_productname.Text & "'"
+            cmd.ExecuteNonQuery()
+
+            welcomemsg.ForeColor = System.Drawing.Color.DarkGreen
+            welcomemsg.Text = "'" & edit_id.Text & "' details update successfully!"
+            con.Close()
+        Catch ex As Exception
+            MessageBox.Show("Data Not Updated" & ex.Message)
+            welcomemsg.ForeColor = System.Drawing.Color.Red
+            Me.Dispose()
+        End Try
+    End Sub
+    Private Sub WrongEntryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WrongEntryToolStripMenuItem.Click
+        wrong_lbl.Text = "wrong"
+        edit_wrong()
+        instock_inventory_wrong()
+        edit_wrong_quatity()
+        getdata()
+    End Sub
+
+    Private Sub get_inventory_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles get_inventory.CellContentClick
+
+    End Sub
+
+    Private Sub get_inventory_MouseClick(sender As Object, e As MouseEventArgs) Handles get_inventory.MouseClick
+        Try
+
+            Me.edit_id.Text = get_inventory.CurrentRow.Cells(0).Value.ToString
+            Me.edit_productname.Text = get_inventory.CurrentRow.Cells(2).Value.ToString
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Failed:TextBox not found ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Dispose()
+        End Try
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+        wrong_lbl.Text = "Delete"
+        edit_wrong()
+        instock_inventory_wrong()
+        edit_wrong_quatity()
+        getdata()
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs)
+        instock_inventory()
+        edit_wrong_quatity()
     End Sub
 End Class

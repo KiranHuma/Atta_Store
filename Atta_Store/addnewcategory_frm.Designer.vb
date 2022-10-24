@@ -22,6 +22,7 @@ Partial Class addnewcategory_frm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(addnewcategory_frm))
         Me.category_name = New System.Windows.Forms.TextBox()
         Me.category_pricetxt = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,6 +36,7 @@ Partial Class addnewcategory_frm
         Me.qty_text = New System.Windows.Forms.Label()
         Me.exist_record_lbl = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'category_name
@@ -148,11 +150,25 @@ Partial Class addnewcategory_frm
         Me.Button2.Text = "Back"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Button3.Location = New System.Drawing.Point(541, 129)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(46, 39)
+        Me.Button3.TabIndex = 28
+        Me.Button3.UseVisualStyleBackColor = False
+        '
         'addnewcategory_frm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(599, 325)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.exist_record_lbl)
         Me.Controls.Add(Me.qty_text)
@@ -186,4 +202,5 @@ Partial Class addnewcategory_frm
     Friend WithEvents qty_text As Label
     Friend WithEvents exist_record_lbl As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

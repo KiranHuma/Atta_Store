@@ -229,7 +229,7 @@ Partial Class login_frm
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Location = New System.Drawing.Point(-8, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(400, 480)
+        Me.PictureBox1.Size = New System.Drawing.Size(378, 480)
         Me.PictureBox1.TabIndex = 93
         Me.PictureBox1.TabStop = False
         '

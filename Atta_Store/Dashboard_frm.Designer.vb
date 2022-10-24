@@ -22,25 +22,17 @@ Partial Class Dashboard_frm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard_frm))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(31, 64)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(125, 17)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Add New Category"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(31, 102)
+        Me.Label2.Location = New System.Drawing.Point(282, 88)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 17)
         Me.Label2.TabIndex = 1
@@ -49,39 +41,54 @@ Partial Class Dashboard_frm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(31, 149)
+        Me.Label3.Location = New System.Drawing.Point(282, 159)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(26, 17)
+        Me.Label3.Size = New System.Drawing.Size(36, 17)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Bill"
+        Me.Label3.Text = "Sale"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(31, 192)
+        Me.Label4.Location = New System.Drawing.Point(282, 121)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(107, 17)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Create Barcode"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Button1.Location = New System.Drawing.Point(608, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(46, 39)
+        Me.Button1.TabIndex = 28
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Dashboard_frm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(955, 680)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(666, 437)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Dashboard_frm"
         Me.Text = "Dashboard_frm"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Button1 As Button
 End Class

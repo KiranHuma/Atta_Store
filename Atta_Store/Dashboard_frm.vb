@@ -6,7 +6,7 @@ Public Class Dashboard_frm
 
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
         addnewcategory_frm.Show()
     End Sub
 

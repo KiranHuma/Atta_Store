@@ -22,12 +22,14 @@ Partial Class barcode_genFrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(barcode_genFrm))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -80,11 +82,25 @@ Partial Class barcode_genFrm
         Me.Button3.Text = "Button3"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.Transparent
+        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Button4.Location = New System.Drawing.Point(377, 206)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(46, 39)
+        Me.Button4.TabIndex = 28
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         'barcode_genFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TextBox2)
@@ -105,4 +121,5 @@ Partial Class barcode_genFrm
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class
