@@ -32,7 +32,7 @@ Partial Class Dashboard_frm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(282, 88)
+        Me.Label2.Location = New System.Drawing.Point(447, 121)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 17)
         Me.Label2.TabIndex = 1
@@ -41,7 +41,7 @@ Partial Class Dashboard_frm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(282, 159)
+        Me.Label3.Location = New System.Drawing.Point(447, 192)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 17)
         Me.Label3.TabIndex = 2
@@ -50,7 +50,7 @@ Partial Class Dashboard_frm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(282, 121)
+        Me.Label4.Location = New System.Drawing.Point(447, 154)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(107, 17)
         Me.Label4.TabIndex = 3

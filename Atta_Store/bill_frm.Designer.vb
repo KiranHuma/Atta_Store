@@ -174,9 +174,9 @@ Partial Class bill_frm
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1063, 719)
+        Me.Button1.Location = New System.Drawing.Point(324, 273)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(107, 38)
+        Me.Button1.Size = New System.Drawing.Size(92, 35)
         Me.Button1.TabIndex = 12
         Me.Button1.Text = "check out"
         Me.Button1.UseVisualStyleBackColor = True
@@ -327,11 +327,11 @@ Partial Class bill_frm
         Me.TabPage1.Controls.Add(Me.Panel1)
         Me.TabPage1.Controls.Add(Me.list_richtxt)
         Me.TabPage1.Controls.Add(Me.sell_by)
+        Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.sell_date)
         Me.TabPage1.Controls.Add(Me.sell_qty)
-        Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.sell_id)
         Me.TabPage1.Controls.Add(Me.welcomemsg)
         Me.TabPage1.Controls.Add(Me.Label6)

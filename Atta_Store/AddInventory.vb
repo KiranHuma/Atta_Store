@@ -204,7 +204,7 @@ Public Class AddInventory
         Dim str As String
         Try
             con.Open()
-            str = "Select inven_Id as[ID],in_barcode as [Barcode],in_product_name as [Product Name],in_prod_price as [Product Price],in_add_by as [Add By],int_date as [Date],status as [Status] from add_invent_tbl where in_product_name like '" & txt_searchinvenotry.Text & "%' AND  status Is NULL OR status='wrong' or status='Returned'"
+            str = "Select inven_Id as[ID],in_barcode as [Barcode],in_product_name as [Product Name],in_prod_price as [Product Price],in_add_by as [Add By],int_date as [Date],status as [Status] from add_invent_tbl where in_product_name like '" & txt_searchinvenotry.Text & "%' AND  status != 'Delete'"
             cmd = New SqlCommand(str, con)
             da = New SqlDataAdapter(cmd)
             ds = New DataSet
@@ -365,5 +365,9 @@ Public Class AddInventory
     Private Sub Button3_Click_1(sender As Object, e As EventArgs)
         instock_inventory()
         edit_wrong_quatity()
+    End Sub
+
+    Private Sub wrong_lbl_Click(sender As Object, e As EventArgs) Handles wrong_lbl.Click
+
     End Sub
 End Class

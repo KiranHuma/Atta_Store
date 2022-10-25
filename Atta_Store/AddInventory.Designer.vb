@@ -55,6 +55,7 @@ Partial Class AddInventory
         Me.wrong_lbl = New System.Windows.Forms.Label()
         Me.edit_id = New System.Windows.Forms.Label()
         Me.edit_productname = New System.Windows.Forms.Label()
+        Me.instock_lbl = New System.Windows.Forms.Label()
         CType(Me.get_inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -82,7 +83,7 @@ Partial Class AddInventory
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WrongEntryToolStripMenuItem, Me.DeleteToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(211, 80)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(161, 52)
         '
         'WrongEntryToolStripMenuItem
         '
@@ -369,6 +370,16 @@ Partial Class AddInventory
         Me.edit_productname.TabIndex = 51
         Me.edit_productname.Text = "Wrong"
         '
+        'instock_lbl
+        '
+        Me.instock_lbl.AutoSize = True
+        Me.instock_lbl.ForeColor = System.Drawing.Color.White
+        Me.instock_lbl.Location = New System.Drawing.Point(602, 116)
+        Me.instock_lbl.Name = "instock_lbl"
+        Me.instock_lbl.Size = New System.Drawing.Size(58, 17)
+        Me.instock_lbl.TabIndex = 52
+        Me.instock_lbl.Text = "In Stock"
+        '
         'AddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -376,6 +387,7 @@ Partial Class AddInventory
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1084, 771)
+        Me.Controls.Add(Me.instock_lbl)
         Me.Controls.Add(Me.edit_productname)
         Me.Controls.Add(Me.edit_id)
         Me.Controls.Add(Me.wrong_lbl)
@@ -445,4 +457,5 @@ Partial Class AddInventory
     Private WithEvents edit_id As Label
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents edit_productname As Label
+    Friend WithEvents instock_lbl As Label
 End Class
