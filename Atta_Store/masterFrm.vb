@@ -149,11 +149,15 @@ Public Class masterFrm
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
         Dashboard_frm.Show()
+        Me.Close()
     End Sub
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+
         Dashboard_frm.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
@@ -343,5 +347,19 @@ Public Class masterFrm
     Private Sub DeleteToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem1.Click
         DeleteSelecedRows_selling()
         getdata()
+    End Sub
+
+    Private Sub TabPage3_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Me.Close()
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+
+        Dashboard_frm.Show()
+        Me.Close()
     End Sub
 End Class

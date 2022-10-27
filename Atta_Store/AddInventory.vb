@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.ComponentModel
+Imports System.Data.SqlClient
 Public Class AddInventory
     Private bitmap As Bitmap
     Dim rdr As SqlDataReader
@@ -254,6 +255,7 @@ Public Class AddInventory
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dashboard_frm.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
@@ -368,6 +370,52 @@ Public Class AddInventory
     End Sub
 
     Private Sub wrong_lbl_Click(sender As Object, e As EventArgs) Handles wrong_lbl.Click
+
+    End Sub
+    Public Sub namecheck()
+        Dim cmd As New SqlCommand()
+
+        Dim str As String
+        Dim com As SqlCommand
+
+
+        Dim con As New SqlConnection(cs)
+        con.Open()
+        str = "select count(*)from add_invent_tbl where in_barcode='" & barcode_txt.Text & "'"
+        com = New SqlCommand(str, con)
+        Dim count As Integer = Convert.ToInt32(com.ExecuteScalar())
+        con.Close()
+        If count > 0 Then
+            exist_record_lbl.Visible = True
+            exist_record_lbl.Text = "Sorry! you already add this product to inventory"
+            exist_record_lbl.ForeColor = Color.Red
+            barcode_txt.Text = ""
+            FillCombo_product_name()
+            product_price.Text = ""
+            'label7.Text = "";
+        Else
+            exist_record_lbl.Text = ""
+
+        End If
+
+
+
+    End Sub
+
+    Private Sub barcode_txt_TextChanged(sender As Object, e As EventArgs) Handles barcode_txt.TextChanged
+
+    End Sub
+
+    Private Sub barcode_txt_Validating(sender As Object, e As CancelEventArgs) Handles barcode_txt.Validating
+        namecheck()
+        txtboxid()
+        barcode_txt.Text = ""
+        pro_name.Text = ""
+        product_price.Text = ""
+        getdata()
+    End Sub
+
+    Private Sub Button3_Click_2(sender As Object, e As EventArgs)
 
     End Sub
 End Class

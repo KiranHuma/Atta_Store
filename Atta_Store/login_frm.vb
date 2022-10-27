@@ -40,7 +40,7 @@ Public Class login_frm
                 AddInventory.added_by_txt.Text = Me.txtUsername.Text
                 bill_frm.sell_by.Text = Me.txtUsername.Text
                 Dashboard_frm.Show()
-                ' Me.Close()
+                Me.Close()
             Else
                 MessageBox.Show("Invalid username or password")
             End If
@@ -54,7 +54,8 @@ Public Class login_frm
 
                 AddInventory.added_by_txt.Text = Me.txtUsername.Text
                 bill_frm.sell_by.Text = Me.txtUsername.Text
-                masterFrm.Show()
+                Dashboard_frm.Label5.Text = Me.selectUser.Text
+                Dashboard_frm.Show()
                 Me.Close()
             Else
                 MessageBox.Show("Your username Or password is not match", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

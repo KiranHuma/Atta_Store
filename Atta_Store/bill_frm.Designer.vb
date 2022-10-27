@@ -58,17 +58,18 @@ Partial Class bill_frm
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.check_inventory = New System.Windows.Forms.DataGridView()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ReturnProductToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txt_seacrh_inven = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.barcode_update_txt = New System.Windows.Forms.TextBox()
         Me.return_update_lbl = New System.Windows.Forms.Label()
         Me.get_returned = New System.Windows.Forms.DataGridView()
         Me.txt_searchinvenotry = New System.Windows.Forms.TextBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -174,11 +175,12 @@ Partial Class bill_frm
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(324, 273)
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(958, 341)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(92, 35)
         Me.Button1.TabIndex = 12
-        Me.Button1.Text = "check out"
+        Me.Button1.Text = "Check Out"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'sell_id
@@ -321,6 +323,7 @@ Partial Class bill_frm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Button5)
         Me.TabPage1.Controls.Add(Me.TableLayoutPanel1)
         Me.TabPage1.Controls.Add(Me.Panel2)
         Me.TabPage1.Controls.Add(Me.Button2)
@@ -353,7 +356,7 @@ Partial Class bill_frm
         Me.TableLayoutPanel1.Controls.Add(Me.Label12, 0, 0)
         Me.TableLayoutPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TableLayoutPanel1.ForeColor = System.Drawing.Color.Coral
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(685, 329)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(618, 338)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -413,7 +416,7 @@ Partial Class bill_frm
         Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(1004, 6)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(46, 39)
@@ -432,6 +435,19 @@ Partial Class bill_frm
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Check Inventory"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(1004, 6)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(46, 39)
+        Me.Button3.TabIndex = 38
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'check_inventory
         '
@@ -485,6 +501,19 @@ Partial Class bill_frm
         Me.TabPage3.Text = "Returned Products"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.Transparent
+        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(1004, 6)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(46, 39)
+        Me.Button4.TabIndex = 39
+        Me.Button4.UseVisualStyleBackColor = False
+        '
         'barcode_update_txt
         '
         Me.barcode_update_txt.Location = New System.Drawing.Point(339, 62)
@@ -527,31 +556,17 @@ Partial Class bill_frm
         Me.txt_searchinvenotry.Size = New System.Drawing.Size(285, 22)
         Me.txt_searchinvenotry.TabIndex = 35
         '
-        'Button3
+        'Button5
         '
-        Me.Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Button3.Location = New System.Drawing.Point(1004, 6)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(46, 39)
-        Me.Button3.TabIndex = 38
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Button4.Location = New System.Drawing.Point(1004, 6)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(46, 39)
-        Me.Button4.TabIndex = 39
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.Button5.BackgroundImage = CType(resources.GetObject("Button5.BackgroundImage"), System.Drawing.Image)
+        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.ForeColor = System.Drawing.Color.White
+        Me.Button5.Location = New System.Drawing.Point(8, 6)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(43, 50)
+        Me.Button5.TabIndex = 41
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'bill_frm
         '
@@ -628,4 +643,5 @@ Partial Class bill_frm
     Friend WithEvents txt_seacrh_inven As TextBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
 End Class

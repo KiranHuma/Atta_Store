@@ -35,10 +35,10 @@ Public Class signup_frm
 		accountcreated()
 
 
-		Dim lg As New login_frm()
-		Me.Hide()
-		lg.Show()
 
+
+		login_frm.Show()
+		Me.Close()
 	End Sub
 	Public Sub namecheck()
 		Dim con As New SqlConnection(cs)

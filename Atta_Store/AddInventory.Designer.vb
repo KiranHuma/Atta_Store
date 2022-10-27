@@ -56,6 +56,7 @@ Partial Class AddInventory
         Me.edit_id = New System.Windows.Forms.Label()
         Me.edit_productname = New System.Windows.Forms.Label()
         Me.instock_lbl = New System.Windows.Forms.Label()
+        Me.exist_record_lbl = New System.Windows.Forms.Label()
         CType(Me.get_inventory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -380,6 +381,14 @@ Partial Class AddInventory
         Me.instock_lbl.TabIndex = 52
         Me.instock_lbl.Text = "In Stock"
         '
+        'exist_record_lbl
+        '
+        Me.exist_record_lbl.AutoSize = True
+        Me.exist_record_lbl.Location = New System.Drawing.Point(20, 349)
+        Me.exist_record_lbl.Name = "exist_record_lbl"
+        Me.exist_record_lbl.Size = New System.Drawing.Size(0, 17)
+        Me.exist_record_lbl.TabIndex = 53
+        '
         'AddInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -387,6 +396,7 @@ Partial Class AddInventory
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1084, 771)
+        Me.Controls.Add(Me.exist_record_lbl)
         Me.Controls.Add(Me.instock_lbl)
         Me.Controls.Add(Me.edit_productname)
         Me.Controls.Add(Me.edit_id)
@@ -458,4 +468,5 @@ Partial Class AddInventory
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents edit_productname As Label
     Friend WithEvents instock_lbl As Label
+    Friend WithEvents exist_record_lbl As Label
 End Class
